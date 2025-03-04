@@ -6,14 +6,14 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 20:43:22 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/25 20:10:39 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_calloc(size_t nitems, size_t size)
 {

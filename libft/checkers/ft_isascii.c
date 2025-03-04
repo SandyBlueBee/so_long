@@ -6,11 +6,11 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:03:35 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/21 17:22:47 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 int	ft_isascii(int c)
 {

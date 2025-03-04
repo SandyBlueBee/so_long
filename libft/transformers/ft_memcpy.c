@@ -6,12 +6,12 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 17:33:57 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/23 17:10:54 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memcpy(void *dest, const void *str, size_t n)
 {

@@ -6,12 +6,12 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 15:05:54 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/25 18:49:27 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

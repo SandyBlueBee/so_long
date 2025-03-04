@@ -6,12 +6,12 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:18:47 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/25 19:02:26 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *str, size_t n)
 {

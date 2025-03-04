@@ -6,12 +6,12 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 18:26:48 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/25 19:20:04 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
+#include "../libft.h"
 
 char	*ft_strnstr(const char *str, const char *str_tofind, size_t n)
 {

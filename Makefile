@@ -51,6 +51,8 @@ HEADERS =	${INC_DIR}/so_long.h \
 # *********************************************************************************************** #
 
 FILES = ${SRC_DIR}/so_long.c \
+		${SRC_DIR}/test_map.c \
+		${SRC_DIR}/error.c \
 
 OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}
 

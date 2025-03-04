@@ -6,13 +6,13 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:43:09 by syukna            #+#    #+#             */
-/*   Updated: 2024/11/27 13:26:44 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/04 16:36:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
 //// Counting the amount of strings to add to the array
 //static int	count_words(char const *s, char c)

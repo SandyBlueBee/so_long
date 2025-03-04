@@ -75,14 +75,25 @@ LINKED_LIST =  	${LL_DIR}/ft_lstnew.c \
 				${LL_DIR}/ft_lstclear.c \
 				${LL_DIR}/ft_lstiter.c \
 				${LL_DIR}/ft_lstmap.c \
+
 GETNEXTLINE =	${GNL_DIR}/get_next_line.c
 
-CONVERSIONS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(CHECKERS) $(TRANSFORMERS) $(PRINTF) $(LINKED_LIST) $(GETNEXTLINE))
+SOURCES = $(CHECKERS) $(TRANSFORMERS) $(PRINTF) $(LINKED_LIST) $(GETNEXTLINE)
 
-# CONVERSIONS =	${CHECKERS:${CHECK_DIR}/.c={OBJ_DIR}.o} ${TRANSFORMERS:${TRANS_DIR}/.c={OBJ_DIR}/.o} \
+# Replace source file paths with object file paths
+OBJ = $(patsubst $(CHECK_DIR)/%.c, $(OBJ_DIR)/%.o, $(CHECKERS)) \
+      $(patsubst $(TRANS_DIR)/%.c, $(OBJ_DIR)/%.o, $(TRANSFORMERS)) \
+      $(patsubst $(PRINTF_DIR)/%.c, $(OBJ_DIR)/%.o, $(PRINTF)) \
+      $(patsubst $(LL_DIR)/%.c, $(OBJ_DIR)/%.o, $(LINKED_LIST)) \
+      $(patsubst $(GNL_DIR)/%.c, $(OBJ_DIR)/%.o, $(GETNEXTLINE))
+
+
+
+# OBJ =	${CHECKERS:${CHECK_DIR}/.c={OBJ_DIR}.o} ${TRANSFORMERS:${TRANS_DIR}/.c={OBJ_DIR}/.o} \
 # 				${PRINTF:${PRINTF_DIR}/.c={OBJ_DIR}.o}/ ${LINKED_LIST:${LL_DIR}/.c={OBJ_DIR}/.o} \
 # 				${GETNEXTLINE:${GNL_DIR}/.c={OBJ_DIR}/.o} \
-HEADERS = libft.h printf/ft_printf.h gnl/et_next_line.h
+
+HEADERS = libft.h printf/ft_printf.h gnl/get_next_line.h
 
 # *********************************************************************************************** #
 # ********************************************MAKE*********************************************** #
@@ -90,10 +101,26 @@ HEADERS = libft.h printf/ft_printf.h gnl/et_next_line.h
 
 all: $(NAME)
 
-$(NAME): $(CONVERSIONS) $(HEADERS)
-	@ar rcs $(NAME) $(CONVERSIONS)
+$(NAME): $(OBJ) $(HEADERS)
+	@ar rcs $(NAME) $(OBJ)
 
-$(OBJ_DIR)/%.o: %.c $(HEADERS)
+$(OBJ_DIR)/%.o: $(CHECK_DIR)/%.c $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(TRANS_DIR)/%.c $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(PRINTF_DIR)/%.c $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(LL_DIR)/%.c $(HEADERS)
+	@mkdir -p $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR)/%.o: $(GNL_DIR)/%.c $(HEADERS)
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
