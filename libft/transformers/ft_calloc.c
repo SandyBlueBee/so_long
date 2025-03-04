@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 13:44:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/03 14:54:11 by syukna           ###   ########.fr       */
+/*   Created: 2024/11/19 20:43:22 by syukna            #+#    #+#             */
+/*   Updated: 2024/11/25 20:10:39 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include <string.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include "libft.h"
 
-/* ************************************************************************** */
-/* ********************************HEADERS*********************************** */
-/* ************************************************************************** */
+void	*ft_calloc(size_t nitems, size_t size)
+{
+	void	*rtn;
 
-# include "../libft/libft.h"
-
-#endif
+	if (nitems != 0 && (SIZE_MAX / nitems) < size)
+		return (NULL);
+	rtn = malloc(nitems * size);
+	if (!rtn)
+		return (NULL);
+	ft_bzero(rtn, nitems * size);
+	return (rtn);
+}

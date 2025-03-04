@@ -8,6 +8,7 @@
 NAME = so_long
 CC = cc 
 CFLAGS = -Wall -Werror -Wextra
+MLXFLAGS = -lXext -lX11
 
 # *********************************************************************************************** #
 # ********************************************COLORS********************************************* #
@@ -46,37 +47,22 @@ HEADERS =	${INC_DIR}/so_long.h \
 			${INC_DIR}/structures.h 
 
 # *********************************************************************************************** #
-# ********************************SRC FILES*********************************** #
+# *******************************************SRC FILES******************************************* #
 # *********************************************************************************************** #
 
-# FILES = ${SRC_DIR}/push_swap.c \
-# 		${SRC_DIR}/parse.c \
-# 		${SRC_DIR}/dll_init.c \
-# 		${SRC_DIR}/dll_check.c \
-# 		${SRC_DIR}/errors.c \
-# 		${SRC_DIR}/points.c \
-# 		${SRC_DIR}/sort.c \
-# 		${SRC_DIR}/forward.c \
-# 		${SRC_DIR}/back.c \
-# 		${SRC_DIR}/funct_choice.c \
-# 		${SRC_DIR}/view.c \
-# 		${SRC_DIR}/push.c \
-# 		${SRC_DIR}/rotate.c \
-# 		${SRC_DIR}/swap.c \
-# 		${SRC_DIR}/free.c \
-# 		${SRC_DIR}/optimize_funct.c \
+FILES = ${SRC_DIR}/so_long.c \
 
-# OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}
+OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}
 
 # *********************************************************************************************** #
-# **********************************MAKE************************************** #
+# ********************************************MAKE*********************************************** #
 # *********************************************************************************************** #
 
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS) Makefile
-	# @make -C libft --no-print-directory
-	# @$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a
+	@make -C libft --no-print-directory
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a
 	@echo -n "$(COLOUR_BRIGHT_GREEN)Loading: "
 	@i=1; \
 	while [ $$i -le 25 ]; do \
@@ -93,12 +79,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then rm -r $(OBJ_DIR); fi
-	# @make -C libft clean --no-print-directory
+	@make -C libft clean --no-print-directory
 	@rm -f ${OBJ}
 	@echo "🤖 $(COLOUR_PURPLE)$(NAME) 🤖$(COLOUR_CYAN)      EXTRA FILES REMOVED. $(COLOUR_END)🗑️"
 
 fclean: clean
-	# @make -C libft fclean --no-print-directory
+	@make -C libft fclean --no-print-directory
 	@rm -f ${NAME}
 	@echo "$(COLOUR_PURPLE)🤖 $(NAME) 🤖 $(COLOUR_RED)       PROGRAM BULLDOZED. $(COLOUR_END)💣"
 

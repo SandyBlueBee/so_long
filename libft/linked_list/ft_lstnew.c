@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 13:44:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/03 14:54:11 by syukna           ###   ########.fr       */
+/*   Created: 2024/11/26 13:43:43 by syukna            #+#    #+#             */
+/*   Updated: 2025/01/23 13:46:07 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include <stdlib.h>
+#include "../libft.h"
 
-/* ************************************************************************** */
-/* ********************************HEADERS*********************************** */
-/* ************************************************************************** */
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*lstnew;
 
-# include "../libft/libft.h"
-
-#endif
+	lstnew = malloc(sizeof(t_list));
+	if (!lstnew)
+		return (NULL);
+	lstnew->content = content;
+	lstnew->next = NULL;
+	return (lstnew);
+}
