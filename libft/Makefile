@@ -75,10 +75,13 @@ LINKED_LIST =  	${LL_DIR}/ft_lstnew.c \
 				${LL_DIR}/ft_lstclear.c \
 				${LL_DIR}/ft_lstiter.c \
 				${LL_DIR}/ft_lstmap.c \
-GETNEXTLINE = ${GNL_DIR}/get_next_line.c
-CONVERSIONS =	${CHECKERS:${CHECK_DIR}/.c={OBJ_DIR}.o} ${TRANSFORMERS:${TRANS_DIR}/.c={OBJ_DIR}/.o} \
-				${PRINTF:${PRINTF_DIR}/.c={OBJ_DIR}.o}/ ${LINKED_LIST:${LL_DIR}/.c={OBJ_DIR}/.o} \
-				${GETNEXTLINE:${GNL_DIR}/.c={OBJ_DIR}/.o} \
+GETNEXTLINE =	${GNL_DIR}/get_next_line.c
+
+CONVERSIONS = $(patsubst %.c, $(OBJ_DIR)/%.o, $(CHECKERS) $(TRANSFORMERS) $(PRINTF) $(LINKED_LIST) $(GETNEXTLINE))
+
+# CONVERSIONS =	${CHECKERS:${CHECK_DIR}/.c={OBJ_DIR}.o} ${TRANSFORMERS:${TRANS_DIR}/.c={OBJ_DIR}/.o} \
+# 				${PRINTF:${PRINTF_DIR}/.c={OBJ_DIR}.o}/ ${LINKED_LIST:${LL_DIR}/.c={OBJ_DIR}/.o} \
+# 				${GETNEXTLINE:${GNL_DIR}/.c={OBJ_DIR}/.o} \
 HEADERS = libft.h printf/ft_printf.h gnl/et_next_line.h
 
 # *********************************************************************************************** #
@@ -90,13 +93,12 @@ all: $(NAME)
 $(NAME): $(CONVERSIONS) $(HEADERS)
 	@ar rcs $(NAME) $(CONVERSIONS)
 
-$(OBJ_DIR)/%.o: %.c $(HEADERS) $(CHECK_DIR)/%.c $(TRANS_DIR)/%.c $(PRINTF_DIR)/%.c $(LL_DIR)/%.c $(GNL_DIR)/%.c
+$(OBJ_DIR)/%.o: %.c $(HEADERS)
 	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@if [ -d "$(OBJ_DIR)" ]; then rm -r $(OBJ_DIR); fi
-	@rm -f ${CONVERSIONS} .bonus
+	@if [ -d "$(OBJ_DIR)" ]; then rm -rf $(OBJ_DIR); fi
 
 fclean: clean
 	@rm -f ${NAME} 
