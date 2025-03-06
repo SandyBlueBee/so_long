@@ -44,7 +44,8 @@ OBJ_DIR = build
 # *********************************************************************************************** #
 
 HEADERS =	${INC_DIR}/so_long.h \
-			${INC_DIR}/structures.h 
+			${INC_DIR}/structures.h \
+			${INC_DIR}/functions.h 
 
 # *********************************************************************************************** #
 # *******************************************SRC FILES******************************************* #
@@ -53,6 +54,7 @@ HEADERS =	${INC_DIR}/so_long.h \
 FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/test_map.c \
 		${SRC_DIR}/error.c \
+		${SRC_DIR}/screen.c \
 
 OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}
 
@@ -64,7 +66,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADERS) Makefile
 	@make -C libft --no-print-directory
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a
+	@make -C minilibx-linux --no-print-directory
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) libft/libft.a $(MLXFLAGS) minilibx-linux/libmlx_Linux.a 
 	@echo -n "$(COLOUR_BRIGHT_GREEN)Loading: "
 	@i=1; \
 	while [ $$i -le 25 ]; do \
@@ -82,6 +85,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then rm -r $(OBJ_DIR); fi
 	@make -C libft clean --no-print-directory
+	@make -C minilibx-linux clean --no-print-directory
 	@rm -f ${OBJ}
 	@echo "🤖 $(COLOUR_PURPLE)$(NAME) 🤖$(COLOUR_CYAN)      EXTRA FILES REMOVED. $(COLOUR_END)🗑️"
 

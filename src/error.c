@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/04 17:04:51 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/06 12:52:40 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int are_all_there(char *map)
 
 int	only_known_chars(char *map)
 {
-	ft_printf("%s", map);
 	int	i;
 	int	j;
 	char set[] = "01CEP\n";
