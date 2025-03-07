@@ -16,7 +16,11 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [ ] Transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
 
 ##[ ] CREATE GAME
+[x] Find a theme
+[x] Create the sprites
+[ ] convert to xpm
 [ ] Create game struct
+[ ] Blue sign
 [ ] Create macros for image locations
 [ ] Use enums for visibility "e_" 
 [ ] Open window
@@ -26,3 +30,6 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [ ] Block user from going through walls
 [ ] Make trap door open for exit
 [ ] Print move count to shell, or screen
+
+
+https://convertio.co/
