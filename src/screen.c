@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:53:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/06 17:20:29 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/07 13:03:29 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	print_img(void *mlx, void *mlx_win)
 
 	// img_width = 600;
 	// img_height = 557;
-	relative_path = "textures/heart.xpm";
+	relative_path = "textures/table.xpm";
 	img = mlx_xpm_file_to_image(mlx, relative_path, &img_width, &img_height);
 	if (!img)
 	{
