@@ -6,12 +6,18 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/06 15:03:24 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/10 18:08:23 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FUNCTIONS_H
 # define FUNCTIONS_H
+
+/* ************************************************************************** */
+/* *******************************INCLUDES*********************************** */
+/* ************************************************************************** */
+
+#include "structures.h"
 
 /* ************************************************************************** */
 /* *******************************FUNCTIONS********************************** */
@@ -23,6 +29,8 @@ int		included_char(char *str, char c, int nbr);
 int		is_rect(char *map);
 int		is_closed(char *map);
 
-void	open_screen(void *mlx, void *mlx_win);
+void	open_screen(t_game *game);
+
+void	improve_map(t_game *game);
 
 #endif // FUNCTIONS_H

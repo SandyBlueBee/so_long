@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/06 12:52:40 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/10 17:54:54 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int are_all_there(char *map)
 		ft_printf("%s", "Error \nThis map does not have 1 exit 'E'.");
 		return (0);
 	}
-	if (!included_char(map, 'C', 1))
+	if (!included_char(map, 'C', 2))
 	{
 		ft_printf("%s", "Error \nThis map does not have 1 collectible 'C'.");
 		return (0);

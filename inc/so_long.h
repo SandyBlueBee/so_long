@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 13:44:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/06 14:25:42 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/10 19:20:05 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@
 
 # include "functions.h"
 # include "structures.h"
+# include "sprites.h"
 # include "../libft/libft.h"
 # include "../minilibx-linux/mlx.h"
 # include "../minilibx-linux/mlx_int.h"
+# include <time.h>
 
 #endif

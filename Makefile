@@ -53,6 +53,7 @@ HEADERS =	${INC_DIR}/so_long.h \
 
 FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/test_map.c \
+		${SRC_DIR}/map.c \
 		${SRC_DIR}/error.c \
 		${SRC_DIR}/screen.c \
 

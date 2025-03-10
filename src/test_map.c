@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:51:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/06 12:56:19 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/10 20:26:51 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	is_rect(char *map)
 
 	i = 0;
 	j = 0;
-	while (map[i] != '\n')
+	while (map[i] != '\n' && map[i] != '\0')
 		i++;
 	len = i;
 	while (map[i])
@@ -122,7 +122,12 @@ int	included_char(char *str, char c, int nbr)
 			j++;
 		i++;
 	}
-	if (j == nbr)
+	if (nbr == 2)
+	{
+		if (j >= 1)
+		return (1);
+	}
+	else if (j == 1)
 		return (1);
 	return (0);
 }
