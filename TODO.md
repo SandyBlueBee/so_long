@@ -7,29 +7,35 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [x] Must be rect map
 [x] Closed map
 [ ] Valid path
+[x] If map is not .ber
 [x] Accept any map with .ber
 [x] Add "Error\n" plus explicit reason for all errors
 [ ] Check if errors must be on fd 2
 
 ##[ ] UNDERSTANDING
-[ ] Hoops from Minilibx
+[x] Hoops from Minilibx
 [ ] Transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
 
 ##[ ] CREATE GAME
 [x] Find a theme
 [x] Create the sprites
-[ ] convert to xpm
-[ ] Create game struct
+[x] convert to xpm
+[x] Create game struct
 [ ] Blue sign
-[ ] Create macros for image locations
-[ ] Use enums for visibility "e_" 
-[ ] Open window
-[ ] Print something to window
-[ ] Close button / ESC (FREE EVERYTHING)
-[ ] Add key logic to user (wasd)
-[ ] Block user from going through walls
-[ ] Make trap door open for exit
+[x] Create globals for image locations
+[x] Open window
+[x] Print something to window
+[x] Close from ESC (FREE EVERYTHING)
+[ ] Close from button
+[x] Add key logic to user (wasd)
+[x] Block user from going through walls
+[x] Make trap door open for exit
 [ ] Print move count to shell, or screen
 
 
 https://convertio.co/
+
+[ ] Rectangle error not working
+[x] Free all
+[ ] Assign textures so that I can free them
+[ ] Must accept external request

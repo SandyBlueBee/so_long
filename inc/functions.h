@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 18:08:23 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 13:50:53 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,9 @@ int		is_closed(char *map);
 void	open_screen(t_game *game);
 
 void	improve_map(t_game *game);
+
+int		close_game(t_game *game);
+
+int		key_hook(int keycode, t_game *game);
 
 #endif // FUNCTIONS_H

@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:53:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 20:13:34 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 16:35:54 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	printing_sprite(t_game *game, t_sprite*sprite)
 			return;
 		}
 	mlx_put_image_to_window(game->mlx, game->mlx_win, img, sprite->x, sprite->y);
+	mlx_destroy_image(game->mlx, img);
 }
 /**
  * @brief prints 1 sprite at a time
@@ -65,6 +66,8 @@ void	get_sprint_loc(t_sprite *sprite, char letter)
 	else if (letter == 'V') 
 		sprite->sprite_location = S_TABLE_V;
 	else if (letter == 'E') 
+		sprite->sprite_location = S_TRAP_CLOSED;
+	else if (letter == 'O') 
 		sprite->sprite_location = S_TRAP_OPEN;
 	else 
 		sprite->sprite_location = S_FLOOR;
@@ -82,7 +85,7 @@ void	print_sprite(t_game *game, char letter, int x, int y)
 	sprite = malloc(sizeof(t_sprite));
 	if (sprite == NULL)  // Always check if malloc succeeds
     {
-        printf("Memory allocation failed\n");
+        ft_printf("Memory allocation failed\n");
         return;
     }
 	get_sprint_loc(sprite, letter);
@@ -98,7 +101,6 @@ void	print_sprite(t_game *game, char letter, int x, int y)
  */
 void	print_screen(t_game *game)
 {
-	printf("%s",game->map);
 	int	i;
 	int	x;
 	int	y;

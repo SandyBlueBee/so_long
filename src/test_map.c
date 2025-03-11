@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:51:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 20:26:51 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 17:26:04 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,7 @@ char	*is_map_valid(int fd)
 {
 	char	*str;
 	char	*finalmapstr;
+	char	*temp;
 
 	str = get_next_line(fd);
 	finalmapstr = ft_calloc(1, sizeof(char));
@@ -143,11 +144,17 @@ char	*is_map_valid(int fd)
 		return (NULL);
 	while (str)
 	{
-		finalmapstr = get_current_line(finalmapstr, str);
-		if (!finalmapstr)
+		temp = get_current_line(finalmapstr, str);
+		free(str);
+		if (!temp)
+		{
+			free(finalmapstr);
 			return (NULL);
+		}
+		finalmapstr = temp;
 		str = get_next_line(fd);
 	}
+	free(str);
 	if (check_error(finalmapstr))
 		exit(EXIT_FAILURE);
 	return (finalmapstr);

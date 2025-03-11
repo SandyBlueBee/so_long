@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 18:02:02 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 14:27:44 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_game
 	void	*mlx;
 	void	*mlx_win;
 	char	*map;
+	int		beers;
 	int		height;
 	int		width;
 }				t_game;

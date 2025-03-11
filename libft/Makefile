@@ -24,7 +24,8 @@ GNL_DIR = gnl
 # *******************************************SRC FILES******************************************* #
 # *********************************************************************************************** #
 
-CHECKERS =		${CHECK_DIR}/ft_isalnum.c \
+CHECKERS =		${CHECK_DIR}/ft_countchar.c \
+				${CHECK_DIR}/ft_isalnum.c \
 				${CHECK_DIR}/ft_isalpha.c \
 				${CHECK_DIR}/ft_isascii.c \
 				${CHECK_DIR}/ft_isdigit.c \

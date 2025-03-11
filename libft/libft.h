@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:07:59 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/04 13:40:09 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 14:32:54 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+int		ft_countchar(char const *s, char c);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
 int		ft_toupper(int c);

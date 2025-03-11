@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:00:31 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 19:58:02 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/11 14:37:20 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,15 @@ char	get_table(void)
 		letter = 'V';
 	return (letter);
 }
+void	add_panel(int i, int len, t_game *game)
+{
+	game->map[i] = '8';
+	i++;
+	while (i < (len - 1))
+		game->map[i++] = 'D';
+	game->map[len - 1] = '9';
+}
+
 
 void	add_borders(t_game *game)
 {
@@ -68,21 +77,13 @@ void	add_borders(t_game *game)
 			game->map[i] = get_table();
 		i++;
 	}
-	game->map[++i] = '8';
 	i++;
-	while (i < (len - 1))
-		game->map[i++] = 'D';
-	game->map[len - 1] = '9';
+	add_panel(i, len, game);
 }
 
-// void	improve_map(t_game *game)
-// {
-	
-// }
 void	improve_map(t_game *game)
 {
 	get_dimensions(game);
 	add_borders(game);
-	
-	
+	game->beers = ft_countchar(game->map, 'C');
 }
