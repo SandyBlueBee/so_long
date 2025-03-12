@@ -6,7 +6,7 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [x] Check min 1 exit, 1 collectible, 1 starting position
 [x] Must be rect map
 [x] Closed map
-[ ] Valid path
+[x] Valid path
 [x] If map is not .ber
 [x] Accept any map with .ber
 [x] Add "Error\n" plus explicit reason for all errors
@@ -37,7 +37,7 @@ https://convertio.co/
 
 [ ] Free all
 
-[ ] Flood fill
+[x] Flood fill
 [ ] Rectangle error not working
 [x] Add player as pos
 [x] rearrange the screen

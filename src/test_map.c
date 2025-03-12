@@ -124,7 +124,7 @@ int	included_char(char *str, char c, int nbr)
 		if (j >= 1)
 		return (1);
 	}
-	else if (j == 1)
+	else if (j == nbr)
 		return (1);
 	return (0);
 }
