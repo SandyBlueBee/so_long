@@ -44,9 +44,6 @@ int	full_wall(char *map, int len)
 
 int	partial_wall(char *map, int len)
 {
-	int	i;
-
-	i = 0;
 	if (map[0] != '1')
 		return (0);
 	if (map[len - 1] != '1')

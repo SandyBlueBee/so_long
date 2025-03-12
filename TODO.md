@@ -37,6 +37,7 @@ https://convertio.co/
 
 [ ] Free all
 
+[ ] Flood fill
 [ ] Rectangle error not working
 [x] Add player as pos
 [x] rearrange the screen

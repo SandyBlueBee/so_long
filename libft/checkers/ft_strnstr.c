@@ -18,12 +18,10 @@ char	*ft_strnstr(const char *str, const char *str_tofind, size_t n)
 	size_t	i;
 	size_t	j;
 	size_t	tofilen;
-	size_t	strlen;
 
 	if (!str_tofind[0])
 		return ((char *)str);
 	tofilen = ft_strlen(str_tofind);
-	strlen = ft_strlen(str);
 	if (tofilen > n)
 		return (NULL);
 	i = 0;
