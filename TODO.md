@@ -35,7 +35,21 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 
 https://convertio.co/
 
+[ ] Free all
+
 [ ] Rectangle error not working
-[x] Free all
-[ ] Assign textures so that I can free them
-[ ] Must accept external request
+[x] Add player as pos
+[x] rearrange the screen
+[x] rearrange the moves
+[x] Assign textures so that I can free them
+[x] Must accept external request
+[ ] add ghosts when beer is taken
+[ ] make ghosts move when player moves
+[x] add bushes 
+[ ] Windows 
+[x] Spawn zone stairs?
+[ ] Change to XK commands
+
+
+[ ] Add object transparency
+[ ] Another level? Or make maps based on levels

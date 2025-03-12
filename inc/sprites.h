@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:52:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/10 20:10:28 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/12 15:24:45 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 /* ************************************************************************** */
 
 # define S_PLAYER "sprites/player.xpm"
+# define S_STAIRS "sprites/stairs.xpm"
 # define S_BEER "sprites/beer.xpm"
 # define S_FLOOR "sprites/floor.xpm"
 # define S_WALL_UP_L "sprites/wall_up_l.xpm"
@@ -31,6 +32,7 @@
 # define S_WALL_DOWN_R "sprites/wall_down_r.xpm"
 # define S_TABLE_H "sprites/table_h.xpm"
 # define S_TABLE_V "sprites/table_v.xpm"
+# define S_BUSH "sprites/bush.xpm"
 # define S_TRAP_CLOSED "sprites/trap_closed.xpm"
 # define S_TRAP_OPEN "sprites/trap_open.xpm"
 

@@ -5,123 +5,126 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/06 14:53:51 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/11 16:35:54 by syukna           ###   ########.fr       */
+/*   Created: 2025/03/12 18:19:07 by syukna            #+#    #+#             */
+/*   Updated: 2025/03/12 19:18:46 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-/**
- * @brief returns the right sprite
- * @param mlx which was initiated
- * @param mlx_win to add to window
- */
-void	printing_sprite(t_game *game, t_sprite*sprite)
-{
-	t_data	*img;
-	int		img_width;
-	int		img_height;
-	char	*relative_path;
+// /**
+//  * @brief prints 1 sprite at a time
+//  * @param mlx which was initiated
+//  * @param mlx_win to add to window
+//  */
+// void	get_sprint_wall_loc(char letter)
+// {
+// 	if (letter == 'P') 
+//         sprite->sprite_location = S_STAIRS;
+// 	else if (letter == 'C') 
+//         sprite->sprite_location = S_BEER;
+// 	else if (letter == '6') 
+//         sprite->sprite_location = S_WALL_UP_L;
+// 	else if (letter == 'U') 
+//         sprite->sprite_location = S_WALL_UP;
+// 	else if (letter == '7') 
+//         sprite->sprite_location = S_WALL_UP_R;
+// 	else if (letter == 'L') 
+//         sprite->sprite_location = S_WALL_L;
+// 	else if (letter == 'R') 
+//         sprite->sprite_location = S_WALL_R;
+// 	else if (letter == '8') 
+//         sprite->sprite_location = S_WALL_DOWN_L;
+// 	else if (letter == '9') 
+//         sprite->sprite_location = S_WALL_DOWN_R;
+// 	else if (letter == 'D') 
+//         sprite->sprite_location = S_WALL_DOWN;
+// 	else if (letter == 'H') 
+// 		sprite->sprite_location = S_TABLE_H;
+// 	else if (letter == 'V') 
+// 		sprite->sprite_location = S_TABLE_V;
+// 	else if (letter == 'B') 
+// 		sprite->sprite_location = S_BUSH;
+// 	else if (letter == 'E') 
+// 		sprite->sprite_location = S_TRAP_CLOSED;
+// 	else if (letter == 'O') 
+// 		sprite->sprite_location = S_TRAP_OPEN;
+// 	else 
+// 		sprite->sprite_location = S_FLOOR;
+// }
 
-	relative_path = sprite->sprite_location;
-	img = mlx_xpm_file_to_image(game->mlx, relative_path, &img_width, &img_height);
-	if (!img)
-		{
-			perror("Error: Failed to load image\n");
-			return;
-		}
-	mlx_put_image_to_window(game->mlx, game->mlx_win, img, sprite->x, sprite->y);
-	mlx_destroy_image(game->mlx, img);
-}
-/**
- * @brief prints 1 sprite at a time
- * @param mlx which was initiated
- * @param mlx_win to add to window
- */
-void	get_sprint_loc(t_sprite *sprite, char letter)
+t_data	*get_sprite(t_game *game, char letter)
 {
 	if (letter == 'P') 
-        sprite->sprite_location = S_PLAYER;
+        return (game->textures.stairs);
 	else if (letter == 'C') 
-        sprite->sprite_location = S_BEER;
+		return (game->textures.beer);
 	else if (letter == '6') 
-        sprite->sprite_location = S_WALL_UP_L;
+		return (game->textures.wall_up_l);
 	else if (letter == 'U') 
-        sprite->sprite_location = S_WALL_UP;
+		return (game->textures.wall_up);
 	else if (letter == '7') 
-        sprite->sprite_location = S_WALL_UP_R;
+		return (game->textures.wall_up_r);
 	else if (letter == 'L') 
-        sprite->sprite_location = S_WALL_L;
+		return (game->textures.wall_l);
 	else if (letter == 'R') 
-        sprite->sprite_location = S_WALL_R;
+		return (game->textures.wall_r);
 	else if (letter == '8') 
-        sprite->sprite_location = S_WALL_DOWN_L;
-	else if (letter == '9') 
-        sprite->sprite_location = S_WALL_DOWN_R;
+		return (game->textures.wall_down_l);
 	else if (letter == 'D') 
-        sprite->sprite_location = S_WALL_DOWN;
+		return (game->textures.wall_down);
+	else if (letter == '9') 
+		return (game->textures.wall_down_r);
 	else if (letter == 'H') 
-		sprite->sprite_location = S_TABLE_H;
+		return (game->textures.table_h);
 	else if (letter == 'V') 
-		sprite->sprite_location = S_TABLE_V;
+		return (game->textures.table_v);
+	else if (letter == 'B') 
+		return (game->textures.bush);
 	else if (letter == 'E') 
-		sprite->sprite_location = S_TRAP_CLOSED;
+		return (game->textures.trap_closed);
 	else if (letter == 'O') 
-		sprite->sprite_location = S_TRAP_OPEN;
+		return (game->textures.trap_open);
 	else 
-		sprite->sprite_location = S_FLOOR;
+		return (game->textures.floor);
 }
 
-/**
- * @brief prints 1 sprite at a time
- * @param mlx which was initiated
- * @param mlx_win to add to window
- */
-void	print_sprite(t_game *game, char letter, int x, int y)
+void	print_sprite(t_game *game, t_data *sprite, int pos)
 {
-	t_sprite	*sprite;
-
-	sprite = malloc(sizeof(t_sprite));
-	if (sprite == NULL)  // Always check if malloc succeeds
-    {
-        ft_printf("Memory allocation failed\n");
-        return;
-    }
-	get_sprint_loc(sprite, letter);
-	sprite->x = x;
-	sprite->y = y;
-	printing_sprite(game, sprite);
-	free(sprite);
+	int x;
+	int y;
+	
+	if (!sprite || !game->map || pos < 0)
+		return;
+	if (game->map[pos] == '\n')
+		return ;
+	x = (pos % (game->width + 1));
+	y = (pos / (game->width + 1));
+	mlx_put_image_to_window(game->mlx, game->mlx_win, sprite, x * 100, y * 100);
 }
-/**
- * @brief Prints full map by sending the right locations to be printed
- * @param mlx which was initiated
- * @param mlx_win to add to window
- */
+
 void	print_screen(t_game *game)
 {
 	int	i;
-	int	x;
-	int	y;
+	t_data	*sprite;
 	
 	i = 0;
-	x = 0;
-	y = 0;
 	while (game->map[i] != '\0')
 	{
-		print_sprite(game, game->map[i], x, y);
-		x += 100;
-		i++;
-		if (game->map[i] == '\n')
+		if (game->map[i] != '\n')
 		{
-			i++;
-			x = 0;
-			y += 100;
+			sprite = get_sprite(game, game->map[i]);
+			print_sprite(game, sprite, i);
 		}
+		i++;
 	}
+	
 }
 
+void	print_player(t_game *game)
+{
+	print_sprite(game, game->textures.player, game->player.pos);
+}
 
 /**
  * @brief reconfigure map and prints first map
@@ -130,31 +133,7 @@ void	print_screen(t_game *game)
  */
 void	open_screen(t_game *game)
 {
+	init_textures(game);
 	print_screen(game);
+	print_player(game);
 }
-
-// void	open_screen(void *mlx, void *mlx_win)
-// {
-// 	t_data	img;
-// 	img.img = mlx_new_image(mlx, 100, 100);
-// 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-// 	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-
-// 	for (int y = 0; y < 100; y++) {
-// 		for (int x = 0; x < 100; x++) {
-// 			my_mlx_pixel_put(&img, x, y, 0x00FF0000); // Red Square
-// 		}
-// 	}
-// 	mlx_put_image_to_window(mlx, mlx_win, img.img, 300,300);
-// 	print_img(mlx, mlx_win);
-
-// }
-
-
-// void	my_mlx_pixel_put(t_data	*data, int x, int y, int color)
-// {
-// 	char	*dst;
-
-// 	dst = data->addr + (y * data->line_length + x *(data->bits_per_pixel / 8));
-// 	*(unsigned int*)dst = color;
-// }

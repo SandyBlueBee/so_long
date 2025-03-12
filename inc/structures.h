@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/11 14:27:44 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/12 18:49:49 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,35 @@
 /* ******************************STRUCTURES********************************** */
 /* ************************************************************************** */
 
-typedef struct	s_data {
+typedef struct	s_data
+{
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
 }				t_data;
+
+typedef struct	s_textures
+{
+	t_data		*player;
+	t_data		*floor;
+	t_data		*beer;
+	t_data		*wall_up_l;
+	t_data		*wall_up;
+	t_data		*wall_up_r;
+	t_data		*wall_l;
+	t_data		*wall_r;
+	t_data		*wall_down_l;
+	t_data		*wall_down;
+	t_data		*wall_down_r;
+	t_data		*table_h;
+	t_data		*table_v;
+	t_data		*bush;
+	t_data		*stairs;
+	t_data		*trap_closed;
+	t_data		*trap_open;
+}				t_textures;
 
 typedef struct	s_sprite
 {
@@ -32,14 +54,22 @@ typedef struct	s_sprite
 	int		y;
 }				t_sprite;
 
+typedef struct s_character
+{
+	char	*char_location;
+	int		pos;
+}				t_character;
+
 typedef struct s_game
 {
-	void	*mlx;
-	void	*mlx_win;
-	char	*map;
-	int		beers;
-	int		height;
-	int		width;
+	void		*mlx;
+	void		*mlx_win;
+	char		*map;
+	int			beers;
+	int			height;
+	int			width;
+	t_textures	textures;
+	t_character player;
 }				t_game;
 
 #endif // STRUCTURES_H

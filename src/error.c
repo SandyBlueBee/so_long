@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/11 13:05:23 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/12 20:04:57 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int check_error(char *map)
 		return (1);
 	if (!is_closed(map))
 	{
-		ft_printf("%s", "Error \nThis map is not surrounded by walls.");
+		ft_printf("%s", "Error \nThis map is not surrounded by walls.%s", map);
 		return (1);
 	}
 	if (!only_known_chars(map))

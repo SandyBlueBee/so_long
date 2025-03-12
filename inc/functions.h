@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/11 13:50:53 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/12 19:40:04 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,14 @@ int		included_char(char *str, char c, int nbr);
 int		is_rect(char *map);
 int		is_closed(char *map);
 
+void	init_game(int argc, char **argv, t_game *game);
+
+void	init_textures(t_game *game);
+
 void	open_screen(t_game *game);
+void	print_sprite(t_game *game, t_data *sprite, int pos);
+void	print_player(t_game *game);
+t_data	*get_sprite(t_game *game, char letter);
 
 void	improve_map(t_game *game);
 

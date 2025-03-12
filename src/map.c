@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:00:31 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/11 14:37:20 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/12 17:15:28 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ char	get_table(void)
 	int	r;
 	char	letter;
 
-	r = rand() % 2;
+	r = rand() % 3;
 	if (r == 1)
 		letter = 'H';
-	else
+	else if (r == 2)
 		letter = 'V';
+	else
+		letter = 'B';
 	return (letter);
 }
 void	add_panel(int i, int len, t_game *game)
