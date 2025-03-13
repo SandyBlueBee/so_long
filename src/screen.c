@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:19:07 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 19:18:46 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 12:54:17 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@
 t_data	*get_sprite(t_game *game, char letter)
 {
 	if (letter == 'P') 
-        return (game->textures.stairs);
+        return (game->textures.floor);
 	else if (letter == 'C') 
 		return (game->textures.beer);
 	else if (letter == '6') 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   imit.c                                             :+:      :+:    :+:   */
+/*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:21:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 18:21:46 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 12:47:03 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,5 @@ void	init_game(int argc, char **argv, t_game *game)
 	game->mlx = mlx_init();
 	game->player.char_location = S_PLAYER;
 	game->player.pos = get_player_pos(game->map);
-	printf("player = %d\n\n", game->player.pos);
+	game->moves = 0;
 }

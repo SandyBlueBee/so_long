@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 18:49:49 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 14:19:52 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_data
 typedef struct	s_textures
 {
 	t_data		*player;
+	t_data		*player_trap;
 	t_data		*floor;
 	t_data		*beer;
 	t_data		*wall_up_l;
@@ -68,6 +69,7 @@ typedef struct s_game
 	int			beers;
 	int			height;
 	int			width;
+	int			moves;
 	t_textures	textures;
 	t_character player;
 }				t_game;

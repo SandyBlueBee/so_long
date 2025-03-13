@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:31:26 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 18:55:45 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 14:19:36 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	init_sprites(t_game *game)
 	
 	text = &game->textures;
 	text->player = mlx_xpm_file_to_image(game->mlx, S_PLAYER, &img_width, &img_height);
+	text->player_trap = mlx_xpm_file_to_image(game->mlx, S_PLAYER_TRAP, &img_width, &img_height);
 	text->floor = mlx_xpm_file_to_image(game->mlx, S_FLOOR, &img_width, &img_height);
 	text->beer = mlx_xpm_file_to_image(game->mlx, S_BEER, &img_width, &img_height);
 	text->bush = mlx_xpm_file_to_image(game->mlx, S_BUSH, &img_width, &img_height);

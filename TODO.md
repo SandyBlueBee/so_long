@@ -10,11 +10,9 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [x] If map is not .ber
 [x] Accept any map with .ber
 [x] Add "Error\n" plus explicit reason for all errors
-[ ] Check if errors must be on fd 2
 
 ##[ ] UNDERSTANDING
 [x] Hoops from Minilibx
-[ ] Transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
 
 ##[ ] CREATE GAME
 [x] Find a theme
@@ -26,17 +24,17 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [x] Open window
 [x] Print something to window
 [x] Close from ESC (FREE EVERYTHING)
-[ ] Close from button
+[x] Close from button
 [x] Add key logic to user (wasd)
 [x] Block user from going through walls
 [x] Make trap door open for exit
-[ ] Print move count to shell, or screen
+[x] Print move count to shell
 
 
 https://convertio.co/
 
 [ ] Free all
-
+[ ] free whenyou protect tectures
 [x] Flood fill
 [ ] Rectangle error not working
 [x] Add player as pos
@@ -44,13 +42,19 @@ https://convertio.co/
 [x] rearrange the moves
 [x] Assign textures so that I can free them
 [x] Must accept external request
-[ ] add ghosts when beer is taken
-[ ] make ghosts move when player moves
 [x] add bushes 
-[ ] Windows 
 [x] Spawn zone stairs?
 [ ] Change to XK commands
+[ ] Check all errors with multiple maps
+[ ] Norminette
+[ ] Check if errors must be on fd 2
 
+Bonus:
 
-[ ] Add object transparency
+[ ] Add object transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
 [ ] Another level? Or make maps based on levels
+[ ] add ghosts when beer is taken
+[ ] make ghosts move when player moves
+[ ] Windows on sprites
+[ ] Animate the ghosts? or blackhole
+[ ] print count on screen

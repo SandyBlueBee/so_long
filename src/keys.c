@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:49:57 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 19:41:24 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 15:17:39 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	move_up(t_game *game)
 
 	i = game->player.pos;
 	line = game->width + 1;
-	if (game->map[i - line] == '0' || game->map[i  - line] == 'C' || game->map[i  - line] == 'P')
+	if (game->map[i - line] == '0' || game->map[i - line] == 'C' || game->map[i - line] == 'P' || game->map[i - line] == 'E')
 	{
 		if (game->map[i  - line] == 'C')
 			game->map[i - line] = '0';
@@ -49,7 +49,12 @@ void	move_up(t_game *game)
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures.floor, i-line);
 		game->player.pos = i - line;
-		print_player(game);
+		if (game->map[i - line] == 'E')
+			print_sprite(game, game->textures.player_trap, i - line);
+		else
+			print_player(game);
+		game->moves++;
+		ft_printf("%d\n", game->moves);
 	}
 	else if (game->map[i - line] == 'O')
 		close_game(game);
@@ -62,7 +67,7 @@ void	move_left(t_game *game)
 	t_data *sprite;
 
 	i = game->player.pos;
-	if (game->map[i - 1] == '0' || game->map[i - 1] == 'C' || game->map[i - 1] == 'P')
+	if (game->map[i - 1] == '0' || game->map[i - 1] == 'C' || game->map[i - 1] == 'P'  || game->map[i  - 1] == 'E')
 	{
 		if (game->map[i - 1] == 'C')
 			game->map[i - 1] = '0';
@@ -70,7 +75,12 @@ void	move_left(t_game *game)
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures.floor, i - 1);
 		game->player.pos = i - 1;
-		print_player(game);
+		if (game->map[i - 1] == 'E')
+			print_sprite(game, game->textures.player_trap, i - 1);
+		else
+			print_player(game);
+		game->moves++;
+		ft_printf("%d\n", game->moves);
 	}
 	else if (game->map[i - 1] == 'O')
 		close_game(game);
@@ -85,7 +95,7 @@ void	move_down(t_game *game)
 
 	i = game->player.pos;
 	line = game->width + 1;
-	if (game->map[i + line] == '0' || game->map[i + line] == 'C' || game->map[i + line] == 'P')
+	if (game->map[i + line] == '0' || game->map[i + line] == 'C' || game->map[i + line] == 'P'  || game->map[i  + line] == 'E')
 	{
 		if (game->map[i + line] == 'C')
 			game->map[i + line] = '0';
@@ -93,7 +103,12 @@ void	move_down(t_game *game)
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures.floor, i + line);
 		game->player.pos = i + line;
-		print_player(game);
+		if (game->map[i + line] == 'E')
+			print_sprite(game, game->textures.player_trap, i + line);
+		else
+			print_player(game);
+		game->moves++;
+		ft_printf("%d\n", game->moves);
 	}
 	else if (game->map[i + line] == 'O')
 		close_game(game);
@@ -106,7 +121,7 @@ void	move_right(t_game *game)
 	t_data *sprite;
 
 	i = game->player.pos;
-	if (game->map[i + 1] == '0' || game->map[i  + 1] == 'C' || game->map[i  + 1] == 'P')
+	if (game->map[i + 1] == '0' || game->map[i  + 1] == 'C' || game->map[i  + 1] == 'P'  || game->map[i  + 1] == 'E')
 	{
 		if (game->map[i + 1] == 'C')
 			game->map[i + 1] = '0';
@@ -114,7 +129,12 @@ void	move_right(t_game *game)
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures.floor, i + 1);
 		game->player.pos = i + 1;
-		print_player(game);
+		if (game->map[i  + 1] == 'E')
+			print_sprite(game, game->textures.player_trap, i + 1);
+		else
+			print_player(game);
+		game->moves++;
+		ft_printf("%d\n", game->moves);
 	}
 	else if (game->map[i + 1] == 'O')
 		close_game(game);
@@ -133,8 +153,7 @@ int	key_hook(int keycode, t_game *game)
 		move_down(game);
 	else if (keycode == 100 || keycode == 65363)
 		move_right(game);
-	else if (keycode == 65307)
+	else if (keycode == 65307 )
 		close_game(game);
-	// open_screen(game);
 	return (0);
 }
