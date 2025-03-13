@@ -1,8 +1,8 @@
 https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 
-##[x] Makefile connect with MinilibX
+##[X] Makefile connect with MinilibX
 
-##[x] PARSE MAP & CHECK ERRORS
+##[X] PARSE MAP & CHECK ERRORS
 [x] Check min 1 exit, 1 collectible, 1 starting position
 [x] Must be rect map
 [x] Closed map
@@ -11,15 +11,14 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 [x] Accept any map with .ber
 [x] Add "Error\n" plus explicit reason for all errors
 
-##[ ] UNDERSTANDING
+##[X] UNDERSTANDING
 [x] Hoops from Minilibx
 
-##[ ] CREATE GAME
+##[X] CREATE GAME
 [x] Find a theme
 [x] Create the sprites
 [x] convert to xpm
 [x] Create game struct
-[ ] Blue sign
 [x] Create globals for image locations
 [x] Open window
 [x] Print something to window
@@ -33,10 +32,7 @@ https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html
 
 https://convertio.co/
 
-[ ] Free all
-[ ] free whenyou protect tectures
 [x] Flood fill
-[ ] Rectangle error not working
 [x] Add player as pos
 [x] rearrange the screen
 [x] rearrange the moves
@@ -44,15 +40,20 @@ https://convertio.co/
 [x] Must accept external request
 [x] add bushes 
 [x] Spawn zone stairs?
-[ ] Change to XK commands
+[x] Removed all while lines
+[x] Update blackhole
+[x] Rectangle error not working
+[x] Change to XK commands
+[x] Free all
+[ ] free when you protect tectures
 [ ] Check all errors with multiple maps
 [ ] Norminette
-[ ] Check if errors must be on fd 2
 
 Bonus:
 
 [ ] Add object transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
 [ ] Another level? Or make maps based on levels
+[ ] Blue sign
 [ ] add ghosts when beer is taken
 [ ] make ghosts move when player moves
 [ ] Windows on sprites

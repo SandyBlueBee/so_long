@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:21:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 12:47:03 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 19:03:43 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,27 @@ int	get_player_pos(char *s)
 void	init_game(int argc, char **argv, t_game *game)
 {
 	int		fd;
-	if (not_ber_file(argv[1]))
-		ft_printf("Error\nFile File is not in .ber format!");
+
 	if (argc != 2 || not_ber_file(argv[1]))
-		close_game(game);
+	{
+		if (not_ber_file(argv[1]))
+			ft_printf("Error\nFile File is not in .ber format!");
+		exit(EXIT_FAILURE);
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		ft_printf("Error\nFile does not exist!");
-		close_game(game);
+		close(fd);
+		exit(EXIT_FAILURE);
 	}
 	game->map = is_map_valid(fd);
 	close(fd);
 	game->mlx = mlx_init();
-	game->player.char_location = S_PLAYER;
-	game->player.pos = get_player_pos(game->map);
+	game->player = ft_calloc(1, sizeof(t_character));
+	if (!game->player)
+		close_game(game);
+	game->player->char_location = S_PLAYER;
+	game->player->pos = get_player_pos(game->map);
 	game->moves = 0;
 }

@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 20:04:57 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 19:07:38 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ int	flood_fill(char *map)
 		return (0);
 	if (!included_char(map_copy, 'E', 0))
 		return (0);
+	free(map_copy);
 	return (1);
 }
 

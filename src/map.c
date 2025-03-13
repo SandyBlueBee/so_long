@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:00:31 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/12 17:15:28 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 19:25:35 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	get_dimensions(t_game *game)
 
 char	get_table(void)
 {
-	int	r;
+	int		r;
 	char	letter;
 
 	r = rand() % 3;
@@ -46,6 +46,7 @@ char	get_table(void)
 		letter = 'B';
 	return (letter);
 }
+
 void	add_panel(int i, int len, t_game *game)
 {
 	game->map[i] = '8';
@@ -54,7 +55,6 @@ void	add_panel(int i, int len, t_game *game)
 		game->map[i++] = 'D';
 	game->map[len - 1] = '9';
 }
-
 
 void	add_borders(t_game *game)
 {

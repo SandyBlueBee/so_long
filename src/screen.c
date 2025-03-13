@@ -6,87 +6,46 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:19:07 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 12:54:17 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/13 18:47:37 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-// /**
-//  * @brief prints 1 sprite at a time
-//  * @param mlx which was initiated
-//  * @param mlx_win to add to window
-//  */
-// void	get_sprint_wall_loc(char letter)
-// {
-// 	if (letter == 'P') 
-//         sprite->sprite_location = S_STAIRS;
-// 	else if (letter == 'C') 
-//         sprite->sprite_location = S_BEER;
-// 	else if (letter == '6') 
-//         sprite->sprite_location = S_WALL_UP_L;
-// 	else if (letter == 'U') 
-//         sprite->sprite_location = S_WALL_UP;
-// 	else if (letter == '7') 
-//         sprite->sprite_location = S_WALL_UP_R;
-// 	else if (letter == 'L') 
-//         sprite->sprite_location = S_WALL_L;
-// 	else if (letter == 'R') 
-//         sprite->sprite_location = S_WALL_R;
-// 	else if (letter == '8') 
-//         sprite->sprite_location = S_WALL_DOWN_L;
-// 	else if (letter == '9') 
-//         sprite->sprite_location = S_WALL_DOWN_R;
-// 	else if (letter == 'D') 
-//         sprite->sprite_location = S_WALL_DOWN;
-// 	else if (letter == 'H') 
-// 		sprite->sprite_location = S_TABLE_H;
-// 	else if (letter == 'V') 
-// 		sprite->sprite_location = S_TABLE_V;
-// 	else if (letter == 'B') 
-// 		sprite->sprite_location = S_BUSH;
-// 	else if (letter == 'E') 
-// 		sprite->sprite_location = S_TRAP_CLOSED;
-// 	else if (letter == 'O') 
-// 		sprite->sprite_location = S_TRAP_OPEN;
-// 	else 
-// 		sprite->sprite_location = S_FLOOR;
-// }
-
 t_data	*get_sprite(t_game *game, char letter)
 {
 	if (letter == 'P') 
-        return (game->textures.floor);
+        return (game->textures->floor);
 	else if (letter == 'C') 
-		return (game->textures.beer);
+		return (game->textures->beer);
 	else if (letter == '6') 
-		return (game->textures.wall_up_l);
+		return (game->textures->wall_up_l);
 	else if (letter == 'U') 
-		return (game->textures.wall_up);
+		return (game->textures->wall_up);
 	else if (letter == '7') 
-		return (game->textures.wall_up_r);
+		return (game->textures->wall_up_r);
 	else if (letter == 'L') 
-		return (game->textures.wall_l);
+		return (game->textures->wall_l);
 	else if (letter == 'R') 
-		return (game->textures.wall_r);
+		return (game->textures->wall_r);
 	else if (letter == '8') 
-		return (game->textures.wall_down_l);
+		return (game->textures->wall_down_l);
 	else if (letter == 'D') 
-		return (game->textures.wall_down);
+		return (game->textures->wall_down);
 	else if (letter == '9') 
-		return (game->textures.wall_down_r);
+		return (game->textures->wall_down_r);
 	else if (letter == 'H') 
-		return (game->textures.table_h);
+		return (game->textures->table_h);
 	else if (letter == 'V') 
-		return (game->textures.table_v);
+		return (game->textures->table_v);
 	else if (letter == 'B') 
-		return (game->textures.bush);
+		return (game->textures->bush);
 	else if (letter == 'E') 
-		return (game->textures.trap_closed);
+		return (game->textures->trap_closed);
 	else if (letter == 'O') 
-		return (game->textures.trap_open);
+		return (game->textures->trap_open);
 	else 
-		return (game->textures.floor);
+		return (game->textures->floor);
 }
 
 void	print_sprite(t_game *game, t_data *sprite, int pos)
@@ -123,7 +82,7 @@ void	print_screen(t_game *game)
 
 void	print_player(t_game *game)
 {
-	print_sprite(game, game->textures.player, game->player.pos);
+	print_sprite(game, game->textures->player, game->player->pos);
 }
 
 /**
