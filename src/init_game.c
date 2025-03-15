@@ -53,7 +53,10 @@ void	init_game(int argc, char **argv, t_game *game)
 	game->player = ft_calloc(1, sizeof(t_character));
 	if (!game->player)
 		close_game(game);
-	game->player->char_location = S_PLAYER;
+	game->player->next = NULL;
 	game->player->pos = get_player_pos(game->map);
 	game->moves = 0;
+
+	// BONUS
+	game->ghost = NULL;
 }

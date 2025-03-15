@@ -38,6 +38,12 @@ void	init_sprites(t_game *game)
 	text->wall_down_r = mlx_xpm_file_to_image(game->mlx, S_WALL_DOWN_R, &img_width, &img_height);
 	text->trap_closed = mlx_xpm_file_to_image(game->mlx, S_TRAP_CLOSED, &img_width, &img_height);
 	text->trap_open = mlx_xpm_file_to_image(game->mlx, S_TRAP_OPEN, &img_width, &img_height);
+
+	// BONUS
+	text->ghost = mlx_xpm_file_to_image(game->mlx, S_GHOST, &img_width, &img_height);
+	text->ghost_bush = mlx_xpm_file_to_image(game->mlx, S_GHOST_BUSH, &img_width, &img_height);
+	text->ghost_table_h = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_H, &img_width, &img_height);
+	text->ghost_table_v = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_V, &img_width, &img_height);
 }
 
 void	init_textures(t_game *game)

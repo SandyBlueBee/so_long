@@ -44,4 +44,11 @@ int		close_game(t_game *game);
 
 int		key_hook(int keycode, t_game *game);
 
+// BONUS
+
+void    add_ghost(t_game *game);
+void	print_ghost(t_game *game, t_character *ghost, int i);
+void    move_ghosts(t_game *game);
+int get_rand(int max);
+
 #endif // FUNCTIONS_H

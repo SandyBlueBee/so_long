@@ -51,6 +51,7 @@ void	move_up(t_game *game)
 		{
 			game->map[i - line] = '0';
 			print_sprite(game, game->textures->player_drink, i - line);
+			add_ghost(game);
 		}
 		else if (game->map[i - line] == 'E')
 			print_sprite(game, game->textures->player_trap, i - line);
@@ -58,6 +59,7 @@ void	move_up(t_game *game)
 			print_player(game);
 		game->moves++;
 		ft_printf("%d\n", game->moves);
+		move_ghosts(game);
 	}
 	else if (game->map[i - line] == 'O')
 		close_game(game);
@@ -80,6 +82,7 @@ void	move_left(t_game *game)
 		{
 			game->map[i - 1] = '0';
 			print_sprite(game, game->textures->player_drink, i - 1);
+			add_ghost(game);
 		}
 		else if (game->map[i - 1] == 'E')
 			print_sprite(game, game->textures->player_trap, i - 1);
@@ -87,6 +90,7 @@ void	move_left(t_game *game)
 			print_player(game);
 		game->moves++;
 		ft_printf("%d\n", game->moves);
+		move_ghosts(game);
 	}
 	else if (game->map[i - 1] == 'O')
 		close_game(game);
@@ -111,6 +115,7 @@ void	move_down(t_game *game)
 		{
 			game->map[i + line] = '0';
 			print_sprite(game, game->textures->player_drink, i + line);
+			add_ghost(game);
 		}
 		else if (game->map[i + line] == 'E')
 			print_sprite(game, game->textures->player_trap, i + line);
@@ -118,6 +123,7 @@ void	move_down(t_game *game)
 			print_player(game);
 		game->moves++;
 		ft_printf("%d\n", game->moves);
+		move_ghosts(game);
 	}
 	else if (game->map[i + line] == 'O')
 		close_game(game);
@@ -140,6 +146,7 @@ void	move_right(t_game *game)
 		{
 			game->map[i + 1] = '0';
 			print_sprite(game, game->textures->player_drink, i + 1);
+			add_ghost(game);
 		}
 		else if (game->map[i + 1] == 'E')
 			print_sprite(game, game->textures->player_trap, i + 1);
@@ -147,6 +154,7 @@ void	move_right(t_game *game)
 			print_player(game);
 		game->moves++;
 		ft_printf("%d\n", game->moves);
+		move_ghosts(game);
 	}
 	else if (game->map[i + 1] == 'O')
 		close_game(game);

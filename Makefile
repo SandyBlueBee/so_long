@@ -60,7 +60,9 @@ FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/screen.c \
 		${SRC_DIR}/keys.c \
 		${SRC_DIR}/close.c \
+		${SRC_DIR}/ghost.c \
 
+# ********** BONUS 
 OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}
 
 # *********************************************************************************************** #

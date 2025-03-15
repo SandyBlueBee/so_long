@@ -37,4 +37,9 @@
 # define S_TRAP_CLOSED "sprites/trap_closed.xpm"
 # define S_TRAP_OPEN "sprites/trap_open.xpm"
 
+# define S_GHOST "sprites/ghost.xpm"
+# define S_GHOST_BUSH "sprites/ghost_bush.xpm"
+# define S_GHOST_TABLE_H "sprites/ghost_table_h.xpm"
+# define S_GHOST_TABLE_V "sprites/ghost_table_v.xpm"
+
 #endif // SPRITES_H

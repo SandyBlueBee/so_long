@@ -46,6 +46,13 @@ typedef struct	s_textures
 	t_data		*bush;
 	t_data		*trap_closed;
 	t_data		*trap_open;
+
+	// BONUS
+
+	t_data		*ghost;
+	t_data		*ghost_bush;
+	t_data		*ghost_table_h;
+	t_data		*ghost_table_v;
 }				t_textures;
 
 typedef struct	s_sprite
@@ -57,7 +64,7 @@ typedef struct	s_sprite
 
 typedef struct s_character
 {
-	char	*char_location;
+	struct s_character	*next;
 	int		pos;
 }				t_character;
 
@@ -72,6 +79,10 @@ typedef struct s_game
 	int			moves;
 	t_textures	*textures;
 	t_character *player;
+
+	// BONUS
+	t_character	*ghost;
+
 }				t_game;
 
 #endif // STRUCTURES_H
