@@ -51,11 +51,17 @@ https://convertio.co/
 
 Bonus:
 
-[ ] Add object transparency -> https://pulgamecanica.herokuapp.com/posts/mlx-transparency
-[ ] Another level? Or make maps based on levels
 [ ] Blue sign
-[ ] add ghosts when beer is taken
-[ ] make ghosts move when player moves
+[x] add ghosts when beer is taken
+[x] make ghosts move when player moves
 [ ] Windows on sprites
-[ ] Animate the ghosts? or blackhole
 [ ] print count on screen
+[ ] Animate the ghosts? or blackhole
+
+validations
+
+[ ] Must have a max number of beers
+[x] solve ghost move 4 directions
+[x] ghost can't move on other ghosts
+[x] Spawn in other zone than player
+

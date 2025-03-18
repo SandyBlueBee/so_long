@@ -1,12 +1,21 @@
 #include "../inc/so_long.h"
 
-int get_start(char *map)
+int get_start_ghost(t_game *game, char *map)
 {
+    int r;
     int i;
 
+    r = get_rand(game->bushes - 1) + 1;
+    ft_printf("r = %d and count = %d, game = %s", r, game->bushes - 1, game->map);
     i = 0;
-    while (map[i] != 'P')
+    while (map[i] != '\0')
+    {
+        if (map[i] == 'B')
+            r--;
+        if (r == 0)
+            return (i);
         i++;
+    }
     return (i);
 }
 
@@ -41,6 +50,25 @@ int get_rand(int max)
     return (rand() % max);
 }
 
+int gh_pres(int pos, t_game *game)
+{
+    t_character *ghost;
+
+    if (game->ghost)
+    {
+        ghost = game->ghost;
+        while (ghost->next)
+        {
+            if (ghost->pos == pos)
+                return (1);
+            ghost = ghost->next;
+        }
+        if (ghost->pos == pos)
+            return (1);
+    }
+    return (0);
+}
+
 void    move_ghost(int r, t_game *game, t_character *ghost)
 {
     t_data      *sprite;
@@ -48,16 +76,16 @@ void    move_ghost(int r, t_game *game, t_character *ghost)
     sprite = get_sprite(game, game->map[ghost->pos]);
     print_sprite(game, sprite, ghost->pos);
     r = get_rand(4);
-    if (r == 1 && !is_letter(game->map[ghost->pos + 1], "UDLR"))
+    if (r == 1 && !gh_pres(ghost->pos + 1, game) && !is_letter(game->map[ghost->pos + 1], "UDLR"))
         ghost->pos++;
-    else if (r == 2 && !is_letter(game->map[ghost->pos + (game->width + 1)], "UDLR"))
+    else if (r == 2 && !gh_pres(ghost->pos + game->width + 1, game) && !is_letter(game->map[ghost->pos + (game->width + 1)], "UDLR"))
         ghost->pos = ghost->pos + game->width + 1;
-    else if (r == 3 && !is_letter(game->map[ghost->pos - 1], "UDLR"))
+    else if (r == 3 && !gh_pres(ghost->pos - 1, game) && !is_letter(game->map[ghost->pos - 1], "UDLR"))
         ghost->pos--;
-    else if (r == 0 && !is_letter(game->map[ghost->pos - (game->width + 1)], "UDLR"))
+    else if (r == 0 && !gh_pres(ghost->pos - game->width - 1, game) && !is_letter(game->map[ghost->pos - (game->width + 1)], "UDLR"))
         ghost->pos = ghost->pos - game->width - 1;
     else
-        move_ghosts(game);
+        move_ghost(get_rand(4), game, ghost);
     print_ghost(game, ghost, ghost->pos);
     if (ghost->pos == game->player->pos)
         close_game(game);
@@ -80,6 +108,8 @@ void    move_ghosts(t_game *game)
     }
 }
 
+
+
 void    add_ghost(t_game *game)
 {
     if (game->ghost == NULL)
@@ -90,10 +120,10 @@ void    add_ghost(t_game *game)
             ft_printf("Failed to allocate memory for ghost\n");
             return;
         }
-        game->ghost->pos = get_start(game->map);
+        game->ghost->pos = get_start_ghost(game, game->map);
         print_ghost(game, game->ghost, game->ghost->pos);
     }
-    else
+    else 
     {
         t_character *ghost;
         t_character *prev;
@@ -107,7 +137,7 @@ void    add_ghost(t_game *game)
         while(prev->next)
             prev = prev->next;
         prev->next = ghost;
-        ghost->pos = get_start(game->map);
+        ghost->pos = get_start_ghost(game, game->map);
         print_ghost(game, ghost, ghost->pos);
     }
 }

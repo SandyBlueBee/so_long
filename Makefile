@@ -7,9 +7,9 @@
 
 NAME = so_long
 CC = cc 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra 
 MLXFLAGS = -lXext -lX11
-
+CFLAGS += -fsanitize=address -g
 # *********************************************************************************************** #
 # ********************************************COLORS********************************************* #
 # *********************************************************************************************** #
@@ -61,6 +61,7 @@ FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/keys.c \
 		${SRC_DIR}/close.c \
 		${SRC_DIR}/ghost.c \
+		${SRC_DIR}/map_bonus.c \
 
 # ********** BONUS 
 OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}

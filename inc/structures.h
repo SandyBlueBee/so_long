@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 18:37:18 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/17 18:55:22 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct s_game
 
 	// BONUS
 	t_character	*ghost;
+	int			bushes;
 
 }				t_game;
 
