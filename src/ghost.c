@@ -98,7 +98,7 @@ void move_ghost(int r, t_game *game, t_character *ghost)
 
     sprite = get_sprite(game, game->map[ghost->pos]);
     print_sprite(game, sprite, ghost->pos);
-    while (i < 4 && moved == 0)
+    while (i < 6 && moved == 0)
     {
         new_pos = directions[(r + i) % 4]; // Rotate through directions
         if (!gh_pres(new_pos, game) && !is_letter(game->map[new_pos], "UDLR"))

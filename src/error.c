@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/17 17:55:51 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 18:43:28 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,6 @@ int check_error(char *map)
 		return (1);
 	}
 	if (!only_known_chars(map))
-		return (1);
-	if (!test_bonus_map(map))
 		return (1);
 	return (0);
 }

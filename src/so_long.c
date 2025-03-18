@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 14:51:45 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 19:24:40 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 19:12:24 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 
 	init_game(argc, argv, &game);
 	improve_map(&game);
+	test_bonus_map(&game);
 	h = game.height * 100;
 	w = game.width * 100;
 	game.mlx_win = mlx_new_window(game.mlx, w, h, "Oktoberfest");

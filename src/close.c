@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:58 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 14:15:45 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 19:16:17 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	free_ghosts(t_game *game)
 {
 	t_character	*ghost;
 	t_character	*next;
+	
 	if (game->ghost)
 	{
 		ghost = game->ghost;
@@ -83,10 +84,13 @@ void	free_ghosts(t_game *game)
 		}
 		free(ghost);
 	}
+	game->ghost = NULL;
 }
 
 int	close_game(t_game *game)
 {
+	if (!game)
+		return (0);
 	if (game->textures)
 	{
 		free_textures_walls(game);

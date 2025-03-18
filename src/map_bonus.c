@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 17:56:06 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 15:02:19 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 19:13:13 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,30 @@ int	count_letter(char *map, char letter)
 	return (count);
 }
 
-int	test_bonus_map(char *map)
+void	ratio_beer_floor(t_game *game)
 {
-	if (map)
+    int beers;
+    int floors;
+
+    beers = count_letter(game->map, 'C');
+    floors = count_letter(game->map, '0');
+    ft_printf("beers = %d floor = %d, divi %d \n", beers, floors,floors/beers);
+	if ((floors/beers) < 15)
     {
-        
+        ft_printf("Error\nThere are too many beers in this map\n");
+        close_game(game);
     }
-		return (1);
-	return (0);
+}
+void	is_there_bush(t_game *game)
+{
+    if (count_letter(game->map, 'B') >= 1)
+        return ;
+    ft_printf("Error\nThere are too may beers in this map\n");
+    close_game(game);
+}
+
+void	test_bonus_map(t_game *game)
+{
+    ratio_beer_floor(game);
+    is_there_bush(game);
 }
