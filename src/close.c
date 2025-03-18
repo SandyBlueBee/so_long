@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:58 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 19:19:29 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 14:15:45 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,42 @@ void	free_textures_content(t_game *game)
 		mlx_destroy_image(game->mlx, game->textures->trap_open);
 }
 
+void	free_textures_bonus(t_game *game)
+{
+	if (game->textures->ghost)
+		mlx_destroy_image(game->mlx, game->textures->ghost);
+	if (game->textures->ghost_bush)
+		mlx_destroy_image(game->mlx, game->textures->ghost_bush);
+	if (game->textures->ghost_table_h)
+		mlx_destroy_image(game->mlx, game->textures->ghost_table_h);
+	if (game->textures->ghost_table_v)
+		mlx_destroy_image(game->mlx, game->textures->ghost_table_v);
+}
+
+void	free_ghosts(t_game *game)
+{
+	t_character	*ghost;
+	t_character	*next;
+	if (game->ghost)
+	{
+		ghost = game->ghost;
+		while (ghost->next)
+		{
+			next = ghost->next;
+			free(ghost);
+			ghost = next;
+		}
+		free(ghost);
+	}
+}
+
 int	close_game(t_game *game)
 {
 	if (game->textures)
 	{
 		free_textures_walls(game);
 		free_textures_content(game);
+		free_textures_bonus(game);
 		free(game->textures);
 	}
 	if (game->mlx_win)
@@ -75,6 +105,8 @@ int	close_game(t_game *game)
 		free(game->map);
 	if (game->player)
 		free(game->player);
+	if (game->ghost)
+		free_ghosts(game);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

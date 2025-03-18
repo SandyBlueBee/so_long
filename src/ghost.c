@@ -6,7 +6,6 @@ int get_start_ghost(t_game *game, char *map)
     int i;
 
     r = get_rand(game->bushes - 1) + 1;
-    ft_printf("r = %d and count = %d, game = %s", r, game->bushes - 1, game->map);
     i = 0;
     while (map[i] != '\0')
     {
@@ -106,6 +105,7 @@ void    move_ghosts(t_game *game)
             ghost = ghost->next;
         }
     }
+    print_player(game);
 }
 
 
