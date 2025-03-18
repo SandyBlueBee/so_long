@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 18:00:31 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 13:12:26 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 15:02:01 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ void	improve_map(t_game *game)
 	get_dimensions(game);
 	add_borders(game);
 	game->beers = ft_countchar(game->map, 'C');
-	game->bushes = count_bushes(game->map);
+	game->bushes = count_letter(game->map, 'B');
 }

@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/17 18:56:39 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/18 15:01:56 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ void	print_ghost(t_game *game, t_character *ghost, int i);
 void    move_ghosts(t_game *game);
 int get_rand(int max);
 int	test_bonus_map(char *map);
-int	count_bushes(char *map);
+int	count_letter(char *map, char letter);
 
 #endif // FUNCTIONS_H

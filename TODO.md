@@ -45,7 +45,7 @@ https://convertio.co/
 [x] Rectangle error not working
 [x] Change to XK commands
 [x] Free all
-[ ] free when you protect tectures
+[x] free when you protect tectures
 [ ] Check all errors with multiple maps
 [ ] Norminette
 
@@ -56,7 +56,7 @@ Bonus:
 [x] make ghosts move when player moves
 [ ] Windows on sprites
 [ ] print count on screen
-[ ] Animate the ghosts? or blackhole
+[ ] Animate death
 
 validations
 

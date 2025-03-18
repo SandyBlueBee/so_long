@@ -67,24 +67,47 @@ int gh_pres(int pos, t_game *game)
     }
     return (0);
 }
+// void    move_ghost(int r, t_game *game, t_character *ghost)
+// {
+//     t_data      *sprite;
+//     int         directions[4];
+//     int         moves[4];
+//     int         count;
 
-void    move_ghost(int r, t_game *game, t_character *ghost)
+//     directions[0] = ghost->pos + 1;             
+//     directions[1] =  ghost->pos + game->width + 1;
+//     directions[2] = ghost->pos - 1;
+//     directions[3] = ghost->pos - game->width - 1;
+//     count = 0;
+
+//     print_ghost(game, ghost, ghost->pos);
+//     if (ghost->pos == game->player->pos)
+//         close_game(game);
+// }
+
+void move_ghost(int r, t_game *game, t_character *ghost)
 {
-    t_data      *sprite;
+    t_data *sprite;
+    int directions[4] = {ghost->pos + 1,
+                         ghost->pos + game->width + 1,
+                         ghost->pos - 1,
+                         ghost->pos - game->width - 1};
+    int i = 0;
+    int new_pos;
+    int moved = 0;
 
     sprite = get_sprite(game, game->map[ghost->pos]);
     print_sprite(game, sprite, ghost->pos);
-    r = get_rand(4);
-    if (r == 1 && !gh_pres(ghost->pos + 1, game) && !is_letter(game->map[ghost->pos + 1], "UDLR"))
-        ghost->pos++;
-    else if (r == 2 && !gh_pres(ghost->pos + game->width + 1, game) && !is_letter(game->map[ghost->pos + (game->width + 1)], "UDLR"))
-        ghost->pos = ghost->pos + game->width + 1;
-    else if (r == 3 && !gh_pres(ghost->pos - 1, game) && !is_letter(game->map[ghost->pos - 1], "UDLR"))
-        ghost->pos--;
-    else if (r == 0 && !gh_pres(ghost->pos - game->width - 1, game) && !is_letter(game->map[ghost->pos - (game->width + 1)], "UDLR"))
-        ghost->pos = ghost->pos - game->width - 1;
-    else
-        move_ghost(get_rand(4), game, ghost);
+    while (i < 4 && moved == 0)
+    {
+        new_pos = directions[(r + i) % 4]; // Rotate through directions
+        if (!gh_pres(new_pos, game) && !is_letter(game->map[new_pos], "UDLR"))
+        {
+            ghost->pos = new_pos;
+            moved = 1;
+        }
+        i++;
+    }
     print_ghost(game, ghost, ghost->pos);
     if (ghost->pos == game->player->pos)
         close_game(game);
