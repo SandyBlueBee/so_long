@@ -6,27 +6,11 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:51:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 18:18:09 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 13:05:35 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
-int	count_char(char *str, char c)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			j++;
-		i++;
-	}
-	return (j);
-}
 
 int	full_wall(char *map, int len)
 {
@@ -59,7 +43,7 @@ int	is_closed(char *map)
 
 	i = 0;
 	len = 0;
-	lines = count_char(map, '\n');
+	lines = ft_countchar(map, '\n');
 	while (map[i] != '\n')
 		i++;
 	len = i;
@@ -100,33 +84,10 @@ int	is_rect(char *map)
 		if (j != len)
 			return (0);
 		j = 0;
-		if (map[i] != '\0') // Only increment i if not at the end
+		if (map[i] != '\0')
 			i++;
 	}
 	return (1);
-}
-
-int	included_char(char *str, char c, int nbr)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			j++;
-		i++;
-	}
-	if (nbr == 2)
-	{
-		if (j >= 1)
-		return (1);
-	}
-	else if (j == nbr)
-		return (1);
-	return (0);
 }
 
 char	*is_map_valid(int fd)

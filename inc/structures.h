@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/17 18:55:22 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 12:39:14 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /* ******************************STRUCTURES********************************** */
 /* ************************************************************************** */
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void	*img;
 	char	*addr;
@@ -26,36 +26,34 @@ typedef struct	s_data
 	int		endian;
 }				t_data;
 
-typedef struct	s_textures
+typedef struct s_textures
 {
-	t_data		*player;
-	t_data		*player_trap;
-	t_data		*player_drink;
-	t_data		*floor;
-	t_data		*beer;
-	t_data		*wall_up_l;
-	t_data		*wall_up;
-	t_data		*wall_up_r;
-	t_data		*wall_l;
-	t_data		*wall_r;
-	t_data		*wall_down_l;
-	t_data		*wall_down;
-	t_data		*wall_down_r;
-	t_data		*table_h;
-	t_data		*table_v;
-	t_data		*bush;
-	t_data		*trap_closed;
-	t_data		*trap_open;
-
+	t_data	*player;
+	t_data	*player_trap;
+	t_data	*player_drink;
+	t_data	*floor;
+	t_data	*beer;
+	t_data	*wall_up_l;
+	t_data	*wall_up;
+	t_data	*wall_up_r;
+	t_data	*wall_l;
+	t_data	*wall_r;
+	t_data	*wall_down_l;
+	t_data	*wall_down;
+	t_data	*wall_down_r;
+	t_data	*table_h;
+	t_data	*table_v;
+	t_data	*bush;
+	t_data	*trap_closed;
+	t_data	*trap_open;
 	// BONUS
-
-	t_data		*ghost;
-	t_data		*ghost_bush;
-	t_data		*ghost_table_h;
-	t_data		*ghost_table_v;
+	t_data	*ghost;
+	t_data	*ghost_bush;
+	t_data	*ghost_table_h;
+	t_data	*ghost_table_v;
 }				t_textures;
 
-typedef struct	s_sprite
+typedef struct s_sprite
 {
 	char	*sprite_location;
 	int		x;
@@ -65,7 +63,7 @@ typedef struct	s_sprite
 typedef struct s_character
 {
 	struct s_character	*next;
-	int		pos;
+	int					pos;
 }				t_character;
 
 typedef struct s_game
@@ -78,7 +76,7 @@ typedef struct s_game
 	int			width;
 	int			moves;
 	t_textures	*textures;
-	t_character *player;
+	t_character	*player;
 
 	// BONUS
 	t_character	*ghost;

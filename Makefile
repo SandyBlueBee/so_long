@@ -54,6 +54,7 @@ HEADERS =	${INC_DIR}/so_long.h \
 FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/init_game.c \
 		${SRC_DIR}/init_textures.c \
+		${SRC_DIR}/test.c \
 		${SRC_DIR}/test_map.c \
 		${SRC_DIR}/map.c \
 		${SRC_DIR}/error.c \
@@ -61,6 +62,7 @@ FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/keys.c \
 		${SRC_DIR}/close.c \
 		${SRC_DIR}/ghost.c \
+		${SRC_DIR}/sprite.c \
 		${SRC_DIR}/map_bonus.c \
 
 # ********** BONUS 

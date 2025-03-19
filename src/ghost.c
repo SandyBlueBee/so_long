@@ -5,7 +5,7 @@ int get_start_ghost(t_game *game, char *map)
     int r;
     int i;
 
-    r = get_rand(game->bushes - 1) + 1;
+    r = get_rand(game->bushes) + 1;
     i = 0;
     while (map[i] != '\0')
     {
@@ -30,7 +30,7 @@ void	print_ghost(t_game *game, t_character *ghost, int i)
 	    print_sprite(game, game->textures->ghost, ghost->pos);
 }
 
-int is_letter(char letter, char *str)
+int is_letter_included(char letter, char *str)
 {
     int i;
 
@@ -67,23 +67,6 @@ int gh_pres(int pos, t_game *game)
     }
     return (0);
 }
-// void    move_ghost(int r, t_game *game, t_character *ghost)
-// {
-//     t_data      *sprite;
-//     int         directions[4];
-//     int         moves[4];
-//     int         count;
-
-//     directions[0] = ghost->pos + 1;             
-//     directions[1] =  ghost->pos + game->width + 1;
-//     directions[2] = ghost->pos - 1;
-//     directions[3] = ghost->pos - game->width - 1;
-//     count = 0;
-
-//     print_ghost(game, ghost, ghost->pos);
-//     if (ghost->pos == game->player->pos)
-//         close_game(game);
-// }
 
 void move_ghost(int r, t_game *game, t_character *ghost)
 {
@@ -96,12 +79,12 @@ void move_ghost(int r, t_game *game, t_character *ghost)
     int new_pos;
     int moved = 0;
 
-    sprite = get_sprite(game, game->map[ghost->pos]);
+    sprite = get_sprite_content(game, game->map[ghost->pos]);
     print_sprite(game, sprite, ghost->pos);
     while (i < 6 && moved == 0)
     {
         new_pos = directions[(r + i) % 4]; // Rotate through directions
-        if (!gh_pres(new_pos, game) && !is_letter(game->map[new_pos], "UDLR"))
+        if (!gh_pres(new_pos, game) && !is_letter_included(game->map[new_pos], "UDLREO"))
         {
             ghost->pos = new_pos;
             moved = 1;

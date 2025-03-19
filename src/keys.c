@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:49:57 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/13 19:26:34 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 12:58:34 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	move_up(t_game *game)
 	line = game->width + 1;
 	if (game->map[i - line] == '0' || game->map[i - line] == 'C' || game->map[i - line] == 'P' || game->map[i - line] == 'E')
 	{
-		sprite = get_sprite(game, game->map[i]);
+		sprite = get_sprite_content(game, game->map[i]);
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures->floor, i-line);
 		game->player->pos = i - line;
@@ -74,7 +74,7 @@ void	move_left(t_game *game)
 	i = game->player->pos;
 	if (game->map[i - 1] == '0' || game->map[i - 1] == 'C' || game->map[i - 1] == 'P'  || game->map[i  - 1] == 'E')
 	{
-		sprite = get_sprite(game, game->map[i]);
+		sprite = get_sprite_content(game, game->map[i]);
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures->floor, i - 1);
 		game->player->pos = i - 1;
@@ -107,7 +107,7 @@ void	move_down(t_game *game)
 	line = game->width + 1;
 	if (game->map[i + line] == '0' || game->map[i + line] == 'C' || game->map[i + line] == 'P'  || game->map[i  + line] == 'E')
 	{
-		sprite = get_sprite(game, game->map[i]);
+		sprite = get_sprite_content(game, game->map[i]);
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures->floor, i + line);
 		game->player->pos = i + line;
@@ -138,7 +138,7 @@ void	move_right(t_game *game)
 	i = game->player->pos;
 	if (game->map[i + 1] == '0' || game->map[i  + 1] == 'C' || game->map[i  + 1] == 'P' || game->map[i  + 1] == 'E')
 	{
-		sprite = get_sprite(game, game->map[i]);
+		sprite = get_sprite_content(game, game->map[i]);
 		print_sprite(game, sprite, i);
 		print_sprite(game, game->textures->floor, i + 1);
 		game->player->pos = i + 1;

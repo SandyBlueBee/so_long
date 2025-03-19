@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:21:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 13:12:15 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 11:11:55 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,17 @@ void	init_game(int argc, char **argv, t_game *game)
 	{
 		if (not_ber_file(argv[1]))
 			ft_printf("Error\nFile File is not in .ber format!");
-		exit(EXIT_FAILURE);
+		close_game(game);
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
 		ft_printf("Error\nFile does not exist!");
 		close(fd);
-		exit(EXIT_FAILURE);
+		close_game(game);
 	}
+	game->textures = NULL;
+	game->mlx_win = NULL;
 	game->map = is_map_valid(fd);
 	close(fd);
 	game->mlx = mlx_init();

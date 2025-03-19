@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countchar.c                                     :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 14:32:08 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 12:40:16 by syukna           ###   ########.fr       */
+/*   Created: 2025/03/19 13:04:36 by syukna            #+#    #+#             */
+/*   Updated: 2025/03/19 13:05:45 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../inc/so_long.h"
 
-int	ft_countchar(char const *s, char c)
+int	included_char(char *str, char c, int nbr)
 {
 	int	i;
-	int	count;
+	int	j;
 
 	i = 0;
-	count = 0;
-	while (s[i] != '\0')
+	j = 0;
+	while (str[i])
 	{
-		if (s[i] == c)
-			count++;
+		if (str[i] == c)
+			j++;
 		i++;
 	}
-	return (count);
+	if (nbr == 2)
+	{
+		if (j >= 1)
+			return (1);
+	}
+	else if (j == nbr)
+		return (1);
+	return (0);
 }

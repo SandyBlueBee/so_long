@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 17:56:06 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 19:13:13 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 11:13:26 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ratio_beer_floor(t_game *game)
     beers = count_letter(game->map, 'C');
     floors = count_letter(game->map, '0');
     ft_printf("beers = %d floor = %d, divi %d \n", beers, floors,floors/beers);
-	if ((floors/beers) < 15)
+	if ((floors/beers) < 5)
     {
         ft_printf("Error\nThere are too many beers in this map\n");
         close_game(game);

@@ -51,16 +51,18 @@ https://convertio.co/
 
 Bonus:
 
-[ ] Blue sign
+[ ] Blue sign as one image to print on top regardless of map
 [x] add ghosts when beer is taken
 [x] make ghosts move when player moves
 [ ] Windows on sprites
 [ ] print count on screen
 [ ] Animate death
+[ ] Solve close trap with player sprite
 
 validations
 
-[ ] Must have a max number of beers
+[x] Must have a max number of beers
+[x] Must have a bush
 [x] solve ghost move 4 directions
 [x] ghost can't move on other ghosts
 [x] Spawn in other zone than player
