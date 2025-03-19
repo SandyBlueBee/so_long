@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:31:26 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:50:50 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 17:02:55 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	init_sprites(t_game *game)
 	text->wall_down_r = mlx_xpm_file_to_image(game->mlx, S_WALL_DOWN_R, &x, &y);
 	text->trap_closed = mlx_xpm_file_to_image(game->mlx, S_TRAP_CLOSED, &x, &y);
 	text->trap_open = mlx_xpm_file_to_image(game->mlx, S_TRAP_OPEN, &x, &y);
+	text->sign = mlx_xpm_file_to_image(game->mlx, S_SIGN, &x, &y);
 }
 // BONUS
 

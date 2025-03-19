@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:58 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:16:49 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 17:25:15 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	free_textures_content(t_game *game)
 		mlx_destroy_image(game->mlx, game->textures->trap_closed);
 	if (game->textures->trap_open)
 		mlx_destroy_image(game->mlx, game->textures->trap_open);
+	if (game->textures->sign)
+		mlx_destroy_image(game->mlx, game->textures->sign);
 }
 
 void	free_textures_bonus(t_game *game)

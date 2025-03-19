@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:49:57 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 14:17:26 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 15:40:06 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,23 @@ void	open_trap(t_game *game)
 
 void	end_move(t_game *game)
 {
+	t_character	*ghost;
+
 	game->beers = ft_countchar(game->map, 'C');
 	if (game->beers == 0)
 		open_trap(game);
+	if (game->ghost)
+	{
+		ghost = game->ghost;
+		while (ghost->next)
+		{
+			if (game->player->pos == ghost->pos)
+				close_game(game);
+			ghost = ghost->next;
+		}
+		if (game->player->pos == ghost->pos)
+			close_game(game);
+	}
 }
 
 int	key_hook(int keycode, t_game *game)

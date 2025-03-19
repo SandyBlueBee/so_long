@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:52:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:12:42 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 16:53:50 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define S_BUSH "sprites/bush.xpm"
 # define S_TRAP_CLOSED "sprites/trap_closed.xpm"
 # define S_TRAP_OPEN "sprites/trap_open.xpm"
+# define S_SIGN "sprites/sign.xpm"
 
 /* ************************************************************************** */
 /* *********************************BONUS************************************ */

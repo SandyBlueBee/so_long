@@ -47,7 +47,7 @@ https://convertio.co/
 [x] Free all
 [x] free when you protect tectures
 [ ] Check all errors with multiple maps
-[ ] Norminette
+[x] Norminette
 
 Bonus:
 

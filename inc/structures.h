@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:16:37 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 16:54:38 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_textures
 	t_data	*bush;
 	t_data	*trap_closed;
 	t_data	*trap_open;
+	t_data	*sign;
 	// BONUS
 	t_data	*ghost;
 	t_data	*ghost_bush;

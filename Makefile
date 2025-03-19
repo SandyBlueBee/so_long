@@ -62,7 +62,8 @@ FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/keys.c \
 		${SRC_DIR}/move_player.c \
 		${SRC_DIR}/close.c \
-		${SRC_DIR}/ghost.c \
+		${SRC_DIR}/move_ghost.c \
+		${SRC_DIR}/add_ghost.c \
 		${SRC_DIR}/sprite.c \
 		${SRC_DIR}/map_bonus.c \
 
