@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:01:33 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 14:30:52 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,13 @@ t_data	*get_sprite(t_game *game, char letter);
 void	improve_map(t_game *game);
 int		close_game(t_game *game);
 int		key_hook(int keycode, t_game *game);
-int		is_letter_included(char letter, char *str);
+void	move_up(t_game *game);
+void	move_left(t_game *game);
+void	move_down(t_game *game);
+void	move_right(t_game *game);
+void	open_trap(t_game *game);
+void	end_move(t_game *game);
+int		let_inc(char letter, char *str);
 t_data	*get_sprite_content(t_game *game, char letter);
 t_data	*get_sprite_wall(t_game *game, char letter);
 

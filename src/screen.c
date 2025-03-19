@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:19:07 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:00:44 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 14:31:02 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	print_screen(t_game *game)
 	{
 		if (game->map[i] != '\n')
 		{
-			if (is_letter_included(game->map[i], "6789UDLR"))
+			if (let_inc(game->map[i], "6789UDLR"))
 				sprite = get_sprite_wall(game, game->map[i]);
 			else
 				sprite = get_sprite_content(game, game->map[i]);

@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:31:26 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:07:29 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 13:50:50 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	init_sprites(t_game *game)
 {
-	t_textures *text;
-	int		x;
-	int		y;
-	
+	t_textures	*text;
+	int			x;
+	int			y;
+
 	text = game->textures;
-	
 	text->player = mlx_xpm_file_to_image(game->mlx, S_PLAYER, &x, &y);
 	text->player_trap = mlx_xpm_file_to_image(game->mlx, S_PLAYER_TRAP, &x, &y);
-	text->player_drink = mlx_xpm_file_to_image(game->mlx, S_PLAYER_DRINK, &x, &y);
+	text->player_b = mlx_xpm_file_to_image(game->mlx, S_PLAYER_DRINK, &x, &y);
 	text->floor = mlx_xpm_file_to_image(game->mlx, S_FLOOR, &x, &y);
 	text->beer = mlx_xpm_file_to_image(game->mlx, S_BEER, &x, &y);
 	text->bush = mlx_xpm_file_to_image(game->mlx, S_BUSH, &x, &y);
@@ -38,12 +37,20 @@ void	init_sprites(t_game *game)
 	text->wall_down_r = mlx_xpm_file_to_image(game->mlx, S_WALL_DOWN_R, &x, &y);
 	text->trap_closed = mlx_xpm_file_to_image(game->mlx, S_TRAP_CLOSED, &x, &y);
 	text->trap_open = mlx_xpm_file_to_image(game->mlx, S_TRAP_OPEN, &x, &y);
+}
+// BONUS
 
-	// BONUS
+void	init_sprites_bonus(t_game *game)
+{
+	t_textures	*text;
+	int			x;
+	int			y;
+
+	text = game->textures;
 	text->ghost = mlx_xpm_file_to_image(game->mlx, S_GHOST, &x, &y);
 	text->ghost_bush = mlx_xpm_file_to_image(game->mlx, S_GHOST_BUSH, &x, &y);
-	text->ghost_table_h = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_H, &x, &y);
-	text->ghost_table_v = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_V, &x, &y);
+	text->ghost_th = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_H, &x, &y);
+	text->ghost_tv = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_V, &x, &y);
 }
 
 void	init_textures(t_game *game)
@@ -55,4 +62,5 @@ void	init_textures(t_game *game)
 		close_game(game);
 	}
 	init_sprites(game);
+	init_sprites_bonus(game);
 }

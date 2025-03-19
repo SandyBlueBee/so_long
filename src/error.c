@@ -6,13 +6,13 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/18 18:43:28 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 14:49:53 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-int are_all_there(char *map)
+int	are_all_there(char *map)
 {
 	if (!included_char(map, 'E', 1))
 	{
@@ -26,7 +26,7 @@ int are_all_there(char *map)
 	}
 	if (!included_char(map, 'P', 1))
 	{
-		ft_printf("%s", "Error \nThis map does not have 1 starting position 'P'.");
+		ft_printf("%s", "Error \nThis map requires 1 starting position 'P'.");
 		return (0);
 	}
 	return (1);
@@ -34,20 +34,21 @@ int are_all_there(char *map)
 
 int	only_known_chars(char *map)
 {
-	int	i;
-	int	j;
-	char set[] = "01CEP\n";
-	
+	int		i;
+	int		j;
+	char	*set;
+
+	set = "01CEP\n";
 	i = 0;
 	while (map[i])
 	{
 		j = 0;
 		while (set[j])
-			{
-				if (map[i] == set[j])
-					break;
-				j++;
-			}
+		{
+			if (map[i] == set[j])
+				break ;
+			j++;
+		}
 		if (j >= 6)
 		{
 			ft_printf("%s", "Error \nThis map contains unknown elements.");
@@ -60,37 +61,33 @@ int	only_known_chars(char *map)
 
 void	filler(char *map, int i, int len)
 {
-	if ((i - len) >= 0)
-		if (map[i - len] == '0' || map[i - len] == 'C' || map[i - len] == 'E')
-		{
-			map[i - len] = 'F';
-			filler(map, i - len, len);
-		}
-	if ((i - 1) >= 0)
-		if (map[i - 1] == '0' || map[i - 1] == 'C' || map[i - 1] == 'E')
-		{
-			map[i - 1] = 'F';
-			filler(map, i - 1, len);
-		}
-	if ((i + len) <= (int)ft_strlen(map))
-		if (map[i + len] == '0' || map[i + len] == 'C' || map[i + len] == 'E')
-		{
-			map[i + len] = 'F';
-			filler(map, i + len, len);
-		}
-	if ((i + 1) <= (int)ft_strlen(map))
-		if (map[i + 1] == '0' || map[i + 1] == 'C' || map[i + 1] == 'E')
-		{
-			map[i + 1] = 'F';
-			filler(map, i + 1, len);
-		}
+	if ((i - len) >= 0 && let_inc(map[i - len], "0CE"))
+	{
+		map[i - len] = 'F';
+		filler(map, i - len, len);
+	}
+	if ((i - 1) >= 0 && let_inc(map[i - 1], "0CE"))
+	{
+		map[i - 1] = 'F';
+		filler(map, i - 1, len);
+	}
+	if ((i + len) <= (int)ft_strlen(map) && let_inc(map[i + len], "0CE"))
+	{
+		map[i + len] = 'F';
+		filler(map, i + len, len);
+	}
+	if ((i + 1) <= (int)ft_strlen(map) && let_inc(map[i + 1], "0CE"))
+	{
+		map[i + 1] = 'F';
+		filler(map, i + 1, len);
+	}
 }
 
 int	flood_fill(char *map)
 {
-	char *map_copy;
-	int i;
-	int len;
+	char	*map_copy;
+	int		i;
+	int		len;
 
 	map_copy = ft_calloc(ft_strlen(map) + 1, 1);
 	ft_strlcpy(map_copy, map, ft_strlen(map) + 1);
@@ -109,7 +106,7 @@ int	flood_fill(char *map)
 	return (1);
 }
 
-int check_error(char *map)
+int	check_error(char *map)
 {
 	if (!is_rect(map))
 	{

@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 13:01:02 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:01:10 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 14:55:32 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_data	*get_sprite_wall(t_game *game, char letter)
 {
-	
 	if (letter == '6')
 		return (game->textures->wall_up_l);
 	else if (letter == '7')
@@ -34,6 +33,7 @@ t_data	*get_sprite_wall(t_game *game, char letter)
 	else
 		return (game->textures->floor);
 }
+
 t_data	*get_sprite_content(t_game *game, char letter)
 {
 	if (letter == 'P')

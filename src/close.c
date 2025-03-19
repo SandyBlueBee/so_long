@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:58 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 12:42:15 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 13:16:49 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	free_textures_content(t_game *game)
 		mlx_destroy_image(game->mlx, game->textures->player);
 	if (game->textures->player_trap)
 		mlx_destroy_image(game->mlx, game->textures->player_trap);
-	if (game->textures->player_drink)
-		mlx_destroy_image(game->mlx, game->textures->player_drink);
+	if (game->textures->player_b)
+		mlx_destroy_image(game->mlx, game->textures->player_b);
 	if (game->textures->beer)
 		mlx_destroy_image(game->mlx, game->textures->beer);
 	if (game->textures->floor)
@@ -62,10 +62,10 @@ void	free_textures_bonus(t_game *game)
 		mlx_destroy_image(game->mlx, game->textures->ghost);
 	if (game->textures->ghost_bush)
 		mlx_destroy_image(game->mlx, game->textures->ghost_bush);
-	if (game->textures->ghost_table_h)
-		mlx_destroy_image(game->mlx, game->textures->ghost_table_h);
-	if (game->textures->ghost_table_v)
-		mlx_destroy_image(game->mlx, game->textures->ghost_table_v);
+	if (game->textures->ghost_th)
+		mlx_destroy_image(game->mlx, game->textures->ghost_th);
+	if (game->textures->ghost_tv)
+		mlx_destroy_image(game->mlx, game->textures->ghost_tv);
 }
 
 void	free_ghosts(t_game *game)

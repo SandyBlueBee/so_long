@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 12:39:14 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/19 13:16:37 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_textures
 {
 	t_data	*player;
 	t_data	*player_trap;
-	t_data	*player_drink;
+	t_data	*player_b;
 	t_data	*floor;
 	t_data	*beer;
 	t_data	*wall_up_l;
@@ -49,8 +49,8 @@ typedef struct s_textures
 	// BONUS
 	t_data	*ghost;
 	t_data	*ghost_bush;
-	t_data	*ghost_table_h;
-	t_data	*ghost_table_v;
+	t_data	*ghost_th;
+	t_data	*ghost_tv;
 }				t_textures;
 
 typedef struct s_sprite

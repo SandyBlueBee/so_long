@@ -58,6 +58,7 @@ Bonus:
 [ ] print count on screen
 [ ] Animate death
 [ ] Solve close trap with player sprite
+[ ] Player disapears after ghost
 
 validations
 
