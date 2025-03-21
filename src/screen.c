@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:19:07 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 17:45:22 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 10:49:44 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,18 +51,6 @@ void	print_player(t_game *game)
 	print_sprite(game, game->textures->player, game->player->pos);
 }
 
-void	print_sign(t_game *game)
-{
-	int			x;
-	int			y;
-	t_data		*spr;
-
-	spr = game->textures->sign;
-	x = game->width * 50 - 70;
-	y = (game->height - 1) * 100 + 22;
-	mlx_put_image_to_window(game->mlx, game->mlx_win, spr, x, y);
-}
-
 /**
  * @brief reconfigure map and prints first map
  * @param mlx which was initiated
@@ -73,4 +61,5 @@ void	open_screen(t_game *game)
 	init_textures(game);
 	print_screen(game);
 	print_player(game);
+	print_step(game);
 }

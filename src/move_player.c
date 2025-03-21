@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 14:04:21 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 15:40:54 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 13:56:56 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	move_player(t_game *game, int current, int next)
 	t_data	*sprite;
 
 	move_ghosts(game);
+	game->drinking = 0;
 	sprite = get_sprite_content(game, game->map[current]);
 	print_sprite(game, sprite, current);
 	print_sprite(game, game->textures->floor, next);
@@ -24,6 +25,7 @@ void	move_player(t_game *game, int current, int next)
 	if (game->map[next] == 'C')
 	{
 		game->map[next] = '0';
+		game->drinking = 1;
 		print_sprite(game, game->textures->player_b, next);
 		add_ghost(game);
 	}
@@ -32,7 +34,8 @@ void	move_player(t_game *game, int current, int next)
 	else
 		print_player(game);
 	game->moves++;
-	ft_printf("%d\n", game->moves);
+	print_step(game);
+	print_ghosts(game);
 }
 
 void	move_up(t_game *game)

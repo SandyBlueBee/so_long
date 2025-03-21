@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 14:30:52 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 14:22:51 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,12 @@ t_data	*get_sprite_wall(t_game *game, char letter);
 
 void	add_ghost(t_game *game);
 void	print_ghost(t_game *game, t_character *ghost, int i);
+void	print_ghosts(t_game *game);
 void	move_ghosts(t_game *game);
 int		get_rand(int max);
 int		count_letter(char *map, char letter);
 void	test_bonus_map(t_game *game);
+int		print_step(t_game *game);
+int		animate_drink(t_game *game);
 
 #endif // FUNCTIONS_H

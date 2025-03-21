@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:42:25 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 15:44:20 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 11:24:58 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,33 @@ void	add_ghost(t_game *game)
 			prev = prev->next;
 		prev->next = ghost;
 		ghost->pos = get_start_ghost(game, game->map);
+		print_ghost(game, ghost, ghost->pos);
+	}
+}
+void	print_ghost(t_game *game, t_character *ghost, int i)
+{
+	if (game->map[i] == 'B')
+		print_sprite(game, game->textures->ghost_bush, ghost->pos);
+	else if (game->map[i] == 'H')
+		print_sprite(game, game->textures->ghost_th, ghost->pos);
+	else if (game->map[i] == 'V')
+		print_sprite(game, game->textures->ghost_tv, ghost->pos);
+	else
+		print_sprite(game, game->textures->ghost, ghost->pos);
+}
+
+void	print_ghosts(t_game *game)
+{
+	t_character	*ghost;
+
+	if (game->ghost)
+	{
+		ghost = game->ghost;
+		while (ghost->next)
+		{
+			print_ghost(game, ghost, ghost->pos);
+			ghost = ghost->next;
+		}
 		print_ghost(game, ghost, ghost->pos);
 	}
 }

@@ -6,23 +6,11 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 14:46:18 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 15:44:32 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 11:29:22 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
-void	print_ghost(t_game *game, t_character *ghost, int i)
-{
-	if (game->map[i] == 'B')
-		print_sprite(game, game->textures->ghost_bush, ghost->pos);
-	else if (game->map[i] == 'H')
-		print_sprite(game, game->textures->ghost_th, ghost->pos);
-	else if (game->map[i] == 'V')
-		print_sprite(game, game->textures->ghost_tv, ghost->pos);
-	else
-		print_sprite(game, game->textures->ghost, ghost->pos);
-}
 
 int	get_rand(int max)
 {

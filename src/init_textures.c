@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:31:26 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 17:02:55 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 15:16:07 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void	init_sprites_bonus(t_game *game)
 	text->ghost_bush = mlx_xpm_file_to_image(game->mlx, S_GHOST_BUSH, &x, &y);
 	text->ghost_th = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_H, &x, &y);
 	text->ghost_tv = mlx_xpm_file_to_image(game->mlx, S_GHOST_TABLE_V, &x, &y);
+	text->player_bef = mlx_xpm_file_to_image(game->mlx, S_PLAYER_BEF, &x, &y);
+	text->player_aft = mlx_xpm_file_to_image(game->mlx, S_PLAYER_AFT, &x, &y);
 }
 
 void	init_textures(t_game *game)

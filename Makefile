@@ -62,10 +62,11 @@ FILES = ${SRC_DIR}/so_long.c \
 		${SRC_DIR}/keys.c \
 		${SRC_DIR}/move_player.c \
 		${SRC_DIR}/close.c \
-		${SRC_DIR}/move_ghost.c \
 		${SRC_DIR}/add_ghost.c \
+		${SRC_DIR}/move_ghost.c \
 		${SRC_DIR}/sprite.c \
 		${SRC_DIR}/map_bonus.c \
+		${SRC_DIR}/print_steps_bonus.c \
 
 # ********** BONUS 
 OBJ = ${FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o}

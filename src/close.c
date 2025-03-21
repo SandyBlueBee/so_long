@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 13:13:58 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 17:25:15 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 15:17:35 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ void	free_textures_bonus(t_game *game)
 		mlx_destroy_image(game->mlx, game->textures->ghost_th);
 	if (game->textures->ghost_tv)
 		mlx_destroy_image(game->mlx, game->textures->ghost_tv);
+	if (game->textures->player_bef)
+		mlx_destroy_image(game->mlx, game->textures->player_bef);
+	if (game->textures->player_aft)
+		mlx_destroy_image(game->mlx, game->textures->player_aft);
 }
 
 void	free_ghosts(t_game *game)

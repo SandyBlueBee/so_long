@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:21:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 14:54:09 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 13:55:52 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,5 @@ void	init_game(int argc, char **argv, t_game *game)
 	game->player->pos = get_player_pos(game->map);
 	game->moves = 0;
 	game->ghost = NULL;
+	game->drinking = 0;
 }
