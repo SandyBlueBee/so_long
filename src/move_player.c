@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 14:04:21 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 13:56:56 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 17:48:09 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	move_player(t_game *game, int current, int next)
 	t_data	*sprite;
 
 	move_ghosts(game);
+	reset_square_steps(game);
 	game->drinking = 0;
 	sprite = get_sprite_content(game, game->map[current]);
 	print_sprite(game, sprite, current);
@@ -35,6 +36,7 @@ void	move_player(t_game *game, int current, int next)
 		print_player(game);
 	game->moves++;
 	print_step(game);
+	print_square_steps(game);
 	print_ghosts(game);
 }
 

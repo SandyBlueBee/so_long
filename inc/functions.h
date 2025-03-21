@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 14:22:51 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 17:48:36 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,7 @@ int		count_letter(char *map, char letter);
 void	test_bonus_map(t_game *game);
 int		print_step(t_game *game);
 int		animate_drink(t_game *game);
+void	print_square_steps(t_game *game);
+void	reset_square_steps(t_game *game);
 
 #endif // FUNCTIONS_H

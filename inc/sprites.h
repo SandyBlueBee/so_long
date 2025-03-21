@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:52:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 15:15:18 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 18:02:52 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 # define S_PLAYER "sprites/player.xpm"
 # define S_PLAYER_TRAP "sprites/player_trap.xpm"
-# define S_PLAYER_BEF "sprites/player_before.xpm"
 # define S_PLAYER_DRINK "sprites/player_drink.xpm"
-# define S_PLAYER_AFT "sprites/player_after.xpm"
 # define S_BEER "sprites/beer.xpm"
 # define S_FLOOR "sprites/floor.xpm"
 # define S_WALL_UP_L "sprites/wall_up_l.xpm"
@@ -47,5 +45,10 @@
 # define S_GHOST_BUSH "sprites/ghost_bush.xpm"
 # define S_GHOST_TABLE_H "sprites/ghost_table_h.xpm"
 # define S_GHOST_TABLE_V "sprites/ghost_table_v.xpm"
+# define S_PLAYER_BEF "sprites/player_before.xpm"
+# define S_MOVE "sprites/move.xpm"
+# define S_MOVE_BEER "sprites/move_beer.xpm"
+# define S_MOVE_GHOST "sprites/move_ghost.xpm"
+# define S_PLAYER_AFT "sprites/player_after.xpm"
 
 #endif // SPRITES_H

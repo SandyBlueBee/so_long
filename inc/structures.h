@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 15:16:42 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/21 18:03:06 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ typedef struct s_textures
 	t_data	*ghost_tv;
 	t_data	*player_bef;
 	t_data	*player_aft;
+	t_data	*move;
+	t_data	*move_beer;
+	t_data	*move_ghost;
 }				t_textures;
 
 typedef struct s_sprite
