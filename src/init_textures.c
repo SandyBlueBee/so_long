@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:31:26 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 18:03:42 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 10:28:52 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void	init_sprites_bonus(t_game *game)
 	text->move = mlx_xpm_file_to_image(game->mlx, S_MOVE, &x, &y);
 	text->move_beer = mlx_xpm_file_to_image(game->mlx, S_MOVE_BEER, &x, &y);
 	text->move_ghost = mlx_xpm_file_to_image(game->mlx, S_MOVE_GHOST, &x, &y);
+	text->move_to = mlx_xpm_file_to_image(game->mlx, S_MOVE_TO, &x, &y);
+	text->move_tc = mlx_xpm_file_to_image(game->mlx, S_MOVE_TC, &x, &y);
 }
 
 void	init_textures(t_game *game)

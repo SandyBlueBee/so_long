@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 13:04:36 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 14:55:49 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 12:01:47 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,10 @@ int	included_char(char *str, char c, int nbr)
 	else if (j == nbr)
 		return (1);
 	return (0);
+}
+
+void	exit_unvalid(char *str)
+{
+	free(str);
+	exit(EXIT_FAILURE);
 }

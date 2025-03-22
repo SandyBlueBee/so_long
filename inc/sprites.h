@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 15:52:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 18:02:52 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 10:27:42 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@
 # define S_GHOST_TABLE_V "sprites/ghost_table_v.xpm"
 # define S_PLAYER_BEF "sprites/player_before.xpm"
 # define S_MOVE "sprites/move.xpm"
+# define S_MOVE_TO "sprites/move_trap_open.xpm"
+# define S_MOVE_TC "sprites/move_trap_closed.xpm"
 # define S_MOVE_BEER "sprites/move_beer.xpm"
 # define S_MOVE_GHOST "sprites/move_ghost.xpm"
 # define S_PLAYER_AFT "sprites/player_after.xpm"

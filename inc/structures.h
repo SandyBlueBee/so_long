@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 14:15:24 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 18:03:06 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 10:28:04 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ typedef struct s_textures
 	t_data	*move;
 	t_data	*move_beer;
 	t_data	*move_ghost;
+	t_data	*move_to;
+	t_data	*move_tc;
 }				t_textures;
 
 typedef struct s_sprite

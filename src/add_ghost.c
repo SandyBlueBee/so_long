@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 15:42:25 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 18:22:24 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 11:53:54 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	add_ghost(t_game *game)
 		print_ghost(game, ghost, ghost->pos);
 	}
 }
+
 void	print_ghost(t_game *game, t_character *ghost, int i)
 {
 	t_data	*ghost_data;
@@ -73,7 +74,9 @@ void	print_ghost(t_game *game, t_character *ghost, int i)
 
 	p_pos = game->player->pos;
 	line = game->width + 1;
-	if (p_pos == i - 1 || p_pos == i - line ||p_pos == i + line ||p_pos == i + 1)
+	if (p_pos == i - 1 || p_pos == i - line)
+		ghost_data = game->textures->move_ghost;
+	else if (p_pos == i + line || p_pos == i + 1)
 		ghost_data = game->textures->move_ghost;
 	else
 		ghost_data = game->textures->ghost;

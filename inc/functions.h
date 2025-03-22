@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:58:23 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/21 17:48:36 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 12:00:40 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	end_move(t_game *game);
 int		let_inc(char letter, char *str);
 t_data	*get_sprite_content(t_game *game, char letter);
 t_data	*get_sprite_wall(t_game *game, char letter);
+void	exit_unvalid(char *str);
 
 /* ************************************************************************** */
 /* *********************************BONUS************************************ */
@@ -62,5 +63,6 @@ int		print_step(t_game *game);
 int		animate_drink(t_game *game);
 void	print_square_steps(t_game *game);
 void	reset_square_steps(t_game *game);
+int		animate_drink(t_game *game);
 
 #endif // FUNCTIONS_H

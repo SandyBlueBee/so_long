@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 17:46:43 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 14:49:53 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 11:45:11 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,15 +99,26 @@ int	flood_fill(char *map)
 		len++;
 	filler(map_copy, i, len + 1);
 	if (!included_char(map_copy, 'C', 0))
+	{
+		free(map_copy);
 		return (0);
+	}
 	if (!included_char(map_copy, 'E', 0))
+	{
+		free(map_copy);
 		return (0);
+	}
 	free(map_copy);
 	return (1);
 }
 
 int	check_error(char *map)
 {
+	if (map[0] == '\0')
+	{
+		ft_printf("%s", "Error \nThis map is empty.");
+		return (1);
+	}
 	if (!is_rect(map))
 	{
 		ft_printf("%s", "Error \nThis map is not a rectangle.");

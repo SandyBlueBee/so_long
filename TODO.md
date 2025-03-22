@@ -46,19 +46,18 @@ https://convertio.co/
 [x] Change to XK commands
 [x] Free all
 [x] free when you protect tectures
-[ ] Check all errors with multiple maps
+[x] Check all errors with multiple maps
 [x] Norminette
 
 Bonus:
 
-[ ] Blue sign as one image to print on top regardless of map
+[x] Blue sign as one image to print on top regardless of map
 [x] add ghosts when beer is taken
 [x] make ghosts move when player moves
-[ ] Windows on sprites
-[ ] print count on screen
+[x] print count on screen
 [ ] Animate death
-[ ] Solve close trap with player sprite
-[ ] Player disapears after ghost
+[x] Solve close trap with player sprite
+[x] Player disapears after ghost
 
 validations
 
@@ -68,3 +67,4 @@ validations
 [x] ghost can't move on other ghosts
 [x] Spawn in other zone than player
 
+[ ] Make makefile bonus rule

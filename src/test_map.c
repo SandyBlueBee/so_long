@@ -6,7 +6,7 @@
 /*   By: syukna <syukna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 16:51:28 by syukna            #+#    #+#             */
-/*   Updated: 2025/03/19 13:05:35 by syukna           ###   ########.fr       */
+/*   Updated: 2025/03/22 12:00:48 by syukna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,15 +105,12 @@ char	*is_map_valid(int fd)
 		temp = get_current_line(finalmapstr, str);
 		free(str);
 		if (!temp)
-		{
-			free(finalmapstr);
-			return (NULL);
-		}
+			exit_unvalid(finalmapstr);
 		finalmapstr = temp;
 		str = get_next_line(fd);
 	}
 	free(str);
 	if (check_error(finalmapstr))
-		exit(EXIT_FAILURE);
+		exit_unvalid(finalmapstr);
 	return (finalmapstr);
 }
